@@ -1,0 +1,50 @@
+C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/Lab1/Test_Benches/bcitid_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Test_Benches/bcitid_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module bcitid_tb
+
+Top level modules:
+	bcitid_tb
+
+} {} {}} C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/Lab1/Test_Benches/decode7_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Test_Benches/decode7_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module decode7_tb
+
+Top level modules:
+	decode7_tb
+
+} {} {}} C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/Lab1/Modules/decode2.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Modules/decode2.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module decode2
+
+Top level modules:
+	decode2
+
+} {} {}} C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/Lab1/Modules/decode7.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Modules/decode7.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module decode7
+
+Top level modules:
+	decode7
+
+} {} {}} C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/Lab1/Modules/bcitid.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Modules/bcitid.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module bcitid
+
+Top level modules:
+	bcitid
+
+} {} {}} C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/Lab1/lab1.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/lab1.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab1
+
+Top level modules:
+	lab1
+
+} {} {}} C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/Lab1/Test_Benches/decode2_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Test_Benches/decode2_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module decode2_tb
+
+Top level modules:
+	decode2_tb
+
+} {} {}}
