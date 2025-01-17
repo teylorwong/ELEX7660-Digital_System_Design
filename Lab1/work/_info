@@ -10,7 +10,7 @@ cModel Technology
 dC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/Lab1
 vbcitid
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1737135668
+Z1 !s110 1737138826
 !i10b 1
 !s100 QV14[gi:;bzWX1Z]9KPlL3
 I4]CGSIZhjlB93?Z?0_C^S0
@@ -26,7 +26,7 @@ Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z6 !s108 1737135668.000000
+Z6 !s108 1737138826.000000
 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Modules/bcitid.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Modules/bcitid.sv|
 !i113 1
@@ -122,7 +122,7 @@ R5
 r1
 !s85 0
 31
-R6
+!s108 1737138825.000000
 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Modules/decode7.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Modules/decode7.sv|
 !i113 1
