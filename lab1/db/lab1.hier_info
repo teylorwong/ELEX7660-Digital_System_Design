@@ -1,17 +1,17 @@
 |lab1
 CLOCK_50 => CLOCK_50.IN1
-leds[0] <= decode7:decode7_0.leds[0]
-leds[1] <= decode7:decode7_0.leds[1]
-leds[2] <= decode7:decode7_0.leds[2]
-leds[3] <= decode7:decode7_0.leds[3]
-leds[4] <= decode7:decode7_0.leds[4]
-leds[5] <= decode7:decode7_0.leds[5]
-leds[6] <= decode7:decode7_0.leds[6]
-leds[7] <= decode7:decode7_0.leds[7]
-ct[0] <= decode2:decode2_0.ct[0]
-ct[1] <= decode2:decode2_0.ct[1]
-ct[2] <= decode2:decode2_0.ct[2]
-ct[3] <= decode2:decode2_0.ct[3]
+leds[0] << decode7:decode7_0.leds[0]
+leds[1] << decode7:decode7_0.leds[1]
+leds[2] << decode7:decode7_0.leds[2]
+leds[3] << decode7:decode7_0.leds[3]
+leds[4] << decode7:decode7_0.leds[4]
+leds[5] << decode7:decode7_0.leds[5]
+leds[6] << decode7:decode7_0.leds[6]
+leds[7] << decode7:decode7_0.leds[7]
+ct[0] << decode2:decode2_0.ct[0]
+ct[1] << decode2:decode2_0.ct[1]
+ct[2] << decode2:decode2_0.ct[2]
+ct[3] << decode2:decode2_0.ct[3]
 
 
 |lab1|decode2:decode2_0

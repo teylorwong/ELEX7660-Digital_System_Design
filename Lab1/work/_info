@@ -10,7 +10,7 @@ cModel Technology
 dC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/Lab1
 vbcitid
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1737132821
+Z1 !s110 1737135668
 !i10b 1
 !s100 QV14[gi:;bzWX1Z]9KPlL3
 I4]CGSIZhjlB93?Z?0_C^S0
@@ -26,7 +26,7 @@ Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z6 !s108 1737132821.000000
+Z6 !s108 1737135668.000000
 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Modules/bcitid.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Modules/bcitid.sv|
 !i113 1
@@ -34,7 +34,7 @@ Z7 o-work work -sv
 Z8 tCvgOpt 0
 vbcitid_tb
 R0
-Z9 !s110 1737132822
+R1
 !i10b 1
 !s100 M4;8zWKRUjmf?Q0k]k07z1
 II;OlmGI_VPoi;_]J2KeLO1
@@ -50,7 +50,7 @@ R5
 r1
 !s85 0
 31
-Z10 !s108 1737132822.000000
+R6
 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Test_Benches/bcitid_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Test_Benches/bcitid_tb.sv|
 !i113 1
@@ -58,7 +58,7 @@ R7
 R8
 vdecode2
 R0
-R9
+R1
 !i10b 1
 !s100 MeI;a:EBTRUBf7V]ETEVi0
 Ico7hFH26Z9CgdRQbQZZCc2
@@ -74,7 +74,7 @@ R5
 r1
 !s85 0
 31
-R10
+R6
 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Modules/decode2.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Modules/decode2.sv|
 !i113 1
@@ -82,7 +82,7 @@ R7
 R8
 vdecode2_tb
 R0
-R9
+R1
 !i10b 1
 !s100 A;F[ab`>@D^]:Ybo1VA<^0
 IS[LcJfJ1S8PT`P[lDZ04D3
@@ -98,7 +98,7 @@ R5
 r1
 !s85 0
 31
-R10
+R6
 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Test_Benches/decode2_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Test_Benches/decode2_tb.sv|
 !i113 1
@@ -108,13 +108,13 @@ vdecode7
 R0
 R1
 !i10b 1
-!s100 cW=?[iUTRgF3:E:_?cPA92
-IXgi`?TQQHX:BC=5LDHMYG2
+!s100 E70b:7LB?X5HK7R`e:0173
+I8i6LdJLL5@M0h3I;43[<70
 R2
 !s105 decode7_sv_unit
 S1
 R3
-R4
+w1737135665
 8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Modules/decode7.sv
 FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Modules/decode7.sv
 L0 4
@@ -130,7 +130,7 @@ R7
 R8
 vdecode7_tb
 R0
-R9
+R1
 !i10b 1
 !s100 lcJ<51i1GJ;iWz8Nf9LA20
 ISKEVU<aLnmA@80lEmcTFh2
@@ -146,7 +146,7 @@ R5
 r1
 !s85 0
 31
-R10
+R6
 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Test_Benches/decode7_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/Test_Benches/decode7_tb.sv|
 !i113 1
@@ -154,49 +154,49 @@ R7
 R8
 vlab1
 R0
-R9
+R1
 !i10b 1
 !s100 9o7ZH3b<0AZE5Wo@LRiO32
 IG^bDZQPRY@2H1YNdI1jjj2
 R2
-Z11 !s105 lab1_sv_unit
+Z9 !s105 lab1_sv_unit
 S1
 R3
 R4
-Z12 8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/lab1.sv
-Z13 FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/lab1.sv
+Z10 8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/lab1.sv
+Z11 FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/lab1.sv
 L0 4
 R5
 r1
 !s85 0
 31
-R10
-Z14 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/lab1.sv|
-Z15 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/lab1.sv|
+R6
+Z12 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/lab1.sv|
+Z13 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/lab1.sv|
 !i113 1
 R7
 R8
 vlab1clk
 R0
-R9
+R1
 !i10b 1
 !s100 kA9cmCjo;O118zKa3;nC82
 Ifn2VBOB^LfOlG;4WaJ:B20
 R2
-R11
+R9
 S1
 R3
 R4
-R12
-R13
+R10
+R11
 L0 28
 R5
 r1
 !s85 0
 31
-R10
-R14
-R15
+R6
+R12
+R13
 !i113 1
 R7
 R8

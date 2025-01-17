@@ -1,5 +1,5 @@
 Fitter report for lab1
-Fri Jan 17 09:06:52 2025
+Fri Jan 17 09:45:26 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Fri Jan 17 09:06:52 2025       ;
+; Fitter Status                   ; Successful - Fri Jan 17 09:45:26 2025       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; lab1                                        ;
 ; Top-level Entity Name           ; lab1                                        ;
@@ -159,7 +159,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.3%      ;
+;     Processor 2            ;   0.2%      ;
 ;     Processors 3-10        ;   0.1%      ;
 +----------------------------+-------------+
 
@@ -1522,9 +1522,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+-----------------------+
 ; Routing Resource Type                       ; Usage                 ;
 +---------------------------------------------+-----------------------+
-; Block interconnects                         ; 7 / 130,276 ( < 1 % ) ;
+; Block interconnects                         ; 8 / 130,276 ( < 1 % ) ;
 ; C12 interconnects                           ; 0 / 6,848 ( 0 % )     ;
-; C2 interconnects                            ; 5 / 51,436 ( < 1 % )  ;
+; C2 interconnects                            ; 4 / 51,436 ( < 1 % )  ;
 ; C4 interconnects                            ; 2 / 25,120 ( < 1 % )  ;
 ; DQS bus muxes                               ; 0 / 19 ( 0 % )        ;
 ; DQS-18 I/O buses                            ; 0 / 19 ( 0 % )        ;
@@ -1585,9 +1585,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )         ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )        ;
 ; Horizontal periphery clocks                 ; 0 / 12 ( 0 % )        ;
-; Local interconnects                         ; 2 / 31,760 ( < 1 % )  ;
+; Local interconnects                         ; 1 / 31,760 ( < 1 % )  ;
 ; Quadrant clocks                             ; 0 / 72 ( 0 % )        ;
-; R14 interconnects                           ; 2 / 6,046 ( < 1 % )   ;
+; R14 interconnects                           ; 1 / 6,046 ( < 1 % )   ;
 ; R14/C12 interconnect drivers                ; 1 / 8,584 ( < 1 % )   ;
 ; R3 interconnects                            ; 7 / 56,712 ( < 1 % )  ;
 ; R6 interconnects                            ; 1 / 131,000 ( < 1 % ) ;
@@ -1910,19 +1910,19 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.18 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.20 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:03
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab1/output_files/lab1.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 137 warnings
-    Info: Peak virtual memory: 6837 megabytes
-    Info: Processing ended: Fri Jan 17 09:06:53 2025
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Peak virtual memory: 6844 megabytes
+    Info: Processing ended: Fri Jan 17 09:45:26 2025
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:22
 
 
 +----------------------------+
