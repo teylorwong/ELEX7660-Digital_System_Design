@@ -2,11 +2,11 @@
 // Teylor Wong 2025-01-14
 
 module decode7 (
-    input logic [3:0] idnum,
+    input logic [3:0] num,
     output logic [7:0] leds );
 
     always_comb
-        case (idnum)
+        case (num)
             4'h0 : leds = 8'h7E;   // 0 on 7-Segment Display
             4'h1 : leds = 8'h30;   // 1 on 7-Segment Display
             4'h2 : leds = 8'h6D;   // 2 on 7-Segment Display
