@@ -1,3 +1,6 @@
+// encoder.sv - ELEX7660 module for Lab2
+// Teylor Wong 2025-01-20
+
 module encoder (
     input logic a, b, clk,  // a corresponds to cw movement, b to ccw movement
     output logic cw, ccw

@@ -2,8 +2,8 @@
 // Description: ELEX 7660 lab1 top-level module.  Displays last
 //              four digits of student number of 4 digit 7-segment
 //              display module.
-// Author: Robert Trost 
-// Date: 2024-01-11
+// Author: Robert Trost & Teylor Wong
+// Date: 2024-01-20
 
 module lab2 ( input logic CLOCK_50,       // 50 MHz clock
               (* altera_attribute = "-name WEAK_PULL_UP_RESISTOR ON" *) 
@@ -46,12 +46,18 @@ module lab2 ( input logic CLOCK_50,       // 50 MHz clock
   // assign the top two bits of count to select digit to display
   assign digit = clk_div_count[15:14]; 
 
+  // This block is written by Teylor
   // Select digit to display (disp_digit)
   // Left two digits (3,2) display encoder 1 hex count and right two digits (1,0) display encoder 2 hex count
   always_comb begin
-  
-  *** ADD CODE HERE ****
-  
+    case (digit)
+      2'b00 : disp_digit = enc2_count[3:0];
+      2'b01 : disp_digit = enc2_count[7:4];
+      2'b10 : disp_digit = enc1_count[3:0];
+      2'b11 : disp_digit = enc1_count[7:4];
+      default: disp_digit = 4'b0000;
+    endcase
+
   end  
 
 endmodule
