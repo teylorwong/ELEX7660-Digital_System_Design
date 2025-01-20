@@ -1,0 +1,81 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/18.1
+vencoder
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1737412249
+!i10b 1
+!s100 ilNbh>I1]XQ`HDnF6EbKP1
+I0<I>NIoiSPRJoY?W1lRdz0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+!s105 encoder_sv_unit
+S1
+Z2 dC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2
+w1737412235
+8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/encoder.sv
+FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/encoder.sv
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1737412249.000000
+!s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/encoder.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/encoder.sv|
+!i113 1
+Z5 o-work work -sv
+Z6 tCvgOpt 0
+vencoder_tb
+R0
+DXx4 work 18 encoder_tb_sv_unit 0 22 1W2c4D;N9aVKMlTbSfIIW1
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 XH5E_@fHI0hnVmgQ[9lJ`3
+Ic0a]z7iHa422lz`QGJOio3
+!s105 encoder_tb_sv_unit
+S1
+R2
+Z7 w1737397418
+Z8 8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Test_Benches/encoder_tb.sv
+Z9 FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Test_Benches/encoder_tb.sv
+L0 20
+R3
+R4
+Z10 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Test_Benches/encoder_tb.sv|
+Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Test_Benches/encoder_tb.sv|
+!i113 1
+R5
+R6
+Xencoder_tb_sv_unit
+R0
+V1W2c4D;N9aVKMlTbSfIIW1
+r1
+!s85 0
+31
+!i10b 1
+!s100 gYc>1KmbbImBFf?0ZJmcJ2
+I1W2c4D;N9aVKMlTbSfIIW1
+!i103 1
+S1
+R2
+R7
+R8
+R9
+L0 10
+R3
+R4
+R10
+R11
+!i113 1
+R5
+R6
