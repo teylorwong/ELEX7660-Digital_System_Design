@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab2
-Tue Jan 21 17:37:35 2025
+Tue Jan 21 18:08:54 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -45,13 +45,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Jan 21 17:37:35 2025       ;
+; Analysis & Synthesis Status     ; Successful - Tue Jan 21 18:08:54 2025       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; lab2                                        ;
 ; Top-level Entity Name           ; lab2                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 56                                          ;
+; Total registers                 ; 64                                          ;
 ; Total pins                      ; 17                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -157,15 +157,15 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 10          ;
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 10          ;
+; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-10        ;   0.0%      ;
+;     Processors 2-14        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -187,25 +187,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 50             ;
+; Estimate of Logic utilization (ALMs needed) ; 55             ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 83             ;
+; Combinational ALUT usage for logic          ; 95             ;
 ;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 16             ;
-;     -- 5 input functions                    ; 24             ;
-;     -- 4 input functions                    ; 15             ;
-;     -- <=3 input functions                  ; 28             ;
+;     -- 6 input functions                    ; 14             ;
+;     -- 5 input functions                    ; 14             ;
+;     -- 4 input functions                    ; 13             ;
+;     -- <=3 input functions                  ; 54             ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 56             ;
+; Dedicated logic registers                   ; 64             ;
 ;                                             ;                ;
 ; I/O pins                                    ; 17             ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 56             ;
-; Total fan-out                               ; 501            ;
-; Average fan-out                             ; 2.90           ;
+; Maximum fan-out                             ; 64             ;
+; Total fan-out                               ; 507            ;
+; Average fan-out                             ; 2.63           ;
 +---------------------------------------------+----------------+
 
 
@@ -214,11 +214,11 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name     ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------+-------------+--------------+
-; |lab2                      ; 83 (20)             ; 56 (16)                   ; 0                 ; 0          ; 17   ; 0            ; |lab2                   ; lab2        ; work         ;
+; |lab2                      ; 95 (20)             ; 64 (16)                   ; 0                 ; 0          ; 17   ; 0            ; |lab2                   ; lab2        ; work         ;
 ;    |decode2:decode2_0|     ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|decode2:decode2_0 ; decode2     ; work         ;
 ;    |decode7:decode7_0|     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|decode7:decode7_0 ; decode7     ; work         ;
-;    |enc2bcd:enc2bcd_1|     ; 24 (24)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab2|enc2bcd:enc2bcd_1 ; enc2bcd     ; work         ;
-;    |enc2bcd:enc2bcd_2|     ; 24 (24)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab2|enc2bcd:enc2bcd_2 ; enc2bcd     ; work         ;
+;    |enc2bcd:enc2bcd_1|     ; 30 (30)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |lab2|enc2bcd:enc2bcd_1 ; enc2bcd     ; work         ;
+;    |enc2bcd:enc2bcd_2|     ; 30 (30)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |lab2|enc2bcd:enc2bcd_2 ; enc2bcd     ; work         ;
 ;    |encoder:encoder_1|     ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|encoder:encoder_1 ; encoder     ; work         ;
 ;    |encoder:encoder_2|     ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |lab2|encoder:encoder_2 ; encoder     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------+-------------+--------------+
@@ -230,7 +230,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 56    ;
+; Total registers                              ; 64    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -240,13 +240,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |lab2|Mux3                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |lab2|enc2bcd:enc2bcd_1|binary_count[2] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |lab2|enc2bcd:enc2bcd_2|binary_count[5] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |lab2|Mux0                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 
 
 +------------------------------------------------+
@@ -266,27 +268,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 56                          ;
+; arriav_ff             ; 64                          ;
 ;     ENA               ; 16                          ;
-;     plain             ; 40                          ;
-; arriav_lcell_comb     ; 93                          ;
+;     plain             ; 48                          ;
+; arriav_lcell_comb     ; 105                         ;
 ;     arith             ; 31                          ;
 ;         1 data inputs ; 16                          ;
-;         2 data inputs ; 1                           ;
-;         4 data inputs ; 4                           ;
-;         5 data inputs ; 10                          ;
-;     normal            ; 62                          ;
+;         2 data inputs ; 15                          ;
+;     normal            ; 74                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 10                          ;
-;         2 data inputs ; 8                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 11                          ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 13                          ;
 ;         5 data inputs ; 14                          ;
-;         6 data inputs ; 16                          ;
+;         6 data inputs ; 14                          ;
 ; boundary_port         ; 17                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.10                        ;
-; Average LUT depth     ; 2.20                        ;
+; Max LUT depth         ; 3.60                        ;
+; Average LUT depth     ; 2.41                        ;
 +-----------------------+-----------------------------+
 
 
@@ -295,7 +295,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -305,12 +305,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Jan 21 17:37:22 2025
+    Info: Processing started: Tue Jan 21 18:08:49 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab2 -c lab2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /users/teylo/documents/github/elex7660-digital_system_design/lab2/modules/enc2bcd.sv
-    Info (12023): Found entity 1: enc2bcd File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/enc2bcd.sv Line: 8
+    Info (12023): Found entity 1: enc2bcd File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/enc2bcd.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file /users/teylo/documents/github/elex7660-digital_system_design/lab2/modules/encoder.sv
     Info (12023): Found entity 1: encoder File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/encoder.sv Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file /users/teylo/documents/github/elex7660-digital_system_design/lab2/modules/decode7.sv
@@ -325,11 +325,13 @@ Info (12128): Elaborating entity "decode7" for hierarchy "decode7:decode7_0" Fil
 Info (12128): Elaborating entity "encoder" for hierarchy "encoder:encoder_1" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/lab2.sv Line: 26
 Warning (10036): Verilog HDL or VHDL warning at encoder.sv(17): object "current_state" assigned a value but never read File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/encoder.sv Line: 17
 Info (12128): Elaborating entity "enc2bcd" for hierarchy "enc2bcd:enc2bcd_1" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/lab2.sv Line: 30
-Warning (10230): Verilog HDL assignment warning at enc2bcd.sv(22): truncated value with size 32 to match size of target (8) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/enc2bcd.sv Line: 22
-Warning (10230): Verilog HDL assignment warning at enc2bcd.sv(24): truncated value with size 32 to match size of target (8) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/enc2bcd.sv Line: 24
-Warning (10230): Verilog HDL assignment warning at enc2bcd.sv(31): truncated value with size 32 to match size of target (4) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/enc2bcd.sv Line: 31
-Warning (10230): Verilog HDL assignment warning at enc2bcd.sv(34): truncated value with size 32 to match size of target (4) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/enc2bcd.sv Line: 34
-Warning (10230): Verilog HDL assignment warning at enc2bcd.sv(38): truncated value with size 32 to match size of target (4) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/enc2bcd.sv Line: 38
+Warning (10230): Verilog HDL assignment warning at enc2bcd.sv(22): truncated value with size 32 to match size of target (2) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/enc2bcd.sv Line: 22
+Warning (10230): Verilog HDL assignment warning at enc2bcd.sv(26): truncated value with size 32 to match size of target (8) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/enc2bcd.sv Line: 26
+Warning (10230): Verilog HDL assignment warning at enc2bcd.sv(32): truncated value with size 32 to match size of target (2) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/enc2bcd.sv Line: 32
+Warning (10230): Verilog HDL assignment warning at enc2bcd.sv(36): truncated value with size 32 to match size of target (8) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/enc2bcd.sv Line: 36
+Warning (10230): Verilog HDL assignment warning at enc2bcd.sv(44): truncated value with size 32 to match size of target (4) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/enc2bcd.sv Line: 44
+Warning (10230): Verilog HDL assignment warning at enc2bcd.sv(47): truncated value with size 32 to match size of target (4) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/enc2bcd.sv Line: 47
+Warning (10230): Verilog HDL assignment warning at enc2bcd.sv(51): truncated value with size 32 to match size of target (4) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Modules/enc2bcd.sv Line: 51
 Info (13014): Ignored 4 buffer(s)
     Info (13019): Ignored 4 SOFT buffer(s)
 Warning (13024): Output pins are stuck at VCC or GND
@@ -338,15 +340,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Quartus/output_files/lab2.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 106 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 118 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 89 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4873 megabytes
-    Info: Processing ended: Tue Jan 21 17:37:35 2025
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:11
+    Info (21061): Implemented 101 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4894 megabytes
+    Info: Processing ended: Tue Jan 21 18:08:54 2025
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:03
 
 
 +------------------------------------------+
