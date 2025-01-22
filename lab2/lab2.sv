@@ -1,6 +1,6 @@
 // File: lab2.sv
-// Description: ELEX 7660 lab2 top-level module. Converts binary to BCD.
-// Author: Teylor Wong
+// Description: ELEX 7660 lab2 top-level module.
+// Author: Robert Trost & Teylor Wong
 // Date: 2024-01-20
 
 module lab2 ( input logic CLOCK_50,       // 50 MHz clock
@@ -26,18 +26,22 @@ module lab2 ( input logic CLOCK_50,       // 50 MHz clock
    encoder encoder_1 (.clk(CLOCK_50), .a(enc1_a), .b(enc1_b), .cw(enc1_cw), .ccw(enc1_ccw));
    encoder encoder_2 (.clk(CLOCK_50), .a(enc2_a), .b(enc2_b), .cw(enc2_cw), .ccw(enc2_ccw));
 
-   // Encoder counts: Increment or decrement binary count
-   always_ff @(posedge CLOCK_50) begin
-      if (enc1_cw) enc1_count_bin <= enc1_count_bin + 1'b1;
-      else if (enc1_ccw) enc1_count_bin <= enc1_count_bin - 1'b1;
+   // Instantiate enc2bcd modules
+   enc2bcd enc2bcd_1 (.clk(CLOCK_50), .cw(enc1_cw), .ccw(enc1_ccw), .bcd_count(enc1_count_bcd));
+   enc2bcd enc2bcd_2 (.clk(CLOCK_50), .cw(enc2_cw), .ccw(enc2_ccw), .bcd_count(enc2_count_bcd));
 
-      if (enc2_cw) enc2_count_bin <= enc2_count_bin + 1'b1;
-      else if (enc2_ccw) enc2_count_bin <= enc2_count_bin - 1'b1;
-   end
+   // // Encoder counts: Increment or decrement binary count
+   // always_ff @(posedge CLOCK_50) begin
+   //    if (enc1_cw) enc1_count_bin <= enc1_count_bin + 1'b1;
+   //    else if (enc1_ccw) enc1_count_bin <= enc1_count_bin - 1'b1;
 
-   // Instantiate enc2bcd modules for binary-to-BCD conversion
-   enc2bcd enc2bcd_1 (.clk(CLOCK_50), .binary(enc1_count_bin), .bcd_count(enc1_count_bcd));
-   enc2bcd enc2bcd_2 (.clk(CLOCK_50), .binary(enc2_count_bin), .bcd_count(enc2_count_bcd));
+   //    if (enc2_cw) enc2_count_bin <= enc2_count_bin + 1'b1;
+   //    else if (enc2_ccw) enc2_count_bin <= enc2_count_bin - 1'b1;
+   // end
+
+   // // Instantiate enc2bcd modules for binary-to-BCD conversion
+   // enc2bcd enc2bcd_1 (.clk(CLOCK_50), .binary(enc1_count_bin), .bcd_count(enc1_count_bcd));
+   // enc2bcd enc2bcd_2 (.clk(CLOCK_50), .binary(enc2_count_bin), .bcd_count(enc2_count_bcd));
 
    // Use count to divide clock and generate a 2-bit digit counter
    always_ff @(posedge CLOCK_50)
