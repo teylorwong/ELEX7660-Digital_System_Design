@@ -30,6 +30,7 @@ module lab2 ( input logic CLOCK_50,       // 50 MHz clock
    enc2bcd enc2bcd_1 (.clk(CLOCK_50), .cw(enc1_cw), .ccw(enc1_ccw), .bcd_count(enc1_count_bcd));
    enc2bcd enc2bcd_2 (.clk(CLOCK_50), .cw(enc2_cw), .ccw(enc2_ccw), .bcd_count(enc2_count_bcd));
 
+  // THE FOLLOWING BLOCK IS NEEDED IF YOU WANT TO DISPLAY HEX ON THE LEDS INSTEAD OF BCD
    // // Encoder counts: Increment or decrement binary count
    // always_ff @(posedge CLOCK_50) begin
    //    if (enc1_cw) enc1_count_bin <= enc1_count_bin + 1'b1;
@@ -38,10 +39,6 @@ module lab2 ( input logic CLOCK_50,       // 50 MHz clock
    //    if (enc2_cw) enc2_count_bin <= enc2_count_bin + 1'b1;
    //    else if (enc2_ccw) enc2_count_bin <= enc2_count_bin - 1'b1;
    // end
-
-   // // Instantiate enc2bcd modules for binary-to-BCD conversion
-   // enc2bcd enc2bcd_1 (.clk(CLOCK_50), .binary(enc1_count_bin), .bcd_count(enc1_count_bcd));
-   // enc2bcd enc2bcd_2 (.clk(CLOCK_50), .binary(enc2_count_bin), .bcd_count(enc2_count_bcd));
 
    // Use count to divide clock and generate a 2-bit digit counter
    always_ff @(posedge CLOCK_50)
