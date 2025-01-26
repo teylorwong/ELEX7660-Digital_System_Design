@@ -14,9 +14,6 @@ module lab2 ( input logic CLOCK_50,       // 50 MHz clock
    logic [1:0] digit;               // Select digit to display
    logic [3:0] disp_digit;          // Current digit of count to display
    logic [15:0] clk_div_count;      // Count used to divide clock
-
-   logic [7:0] enc1_count_bin, enc2_count_bin; // Binary counts for encoders
-   logic [7:0] enc1_count_bcd, enc2_count_bcd; // BCD counts for encoders
    logic enc1_cw, enc1_ccw, enc2_cw, enc2_ccw; // Encoder module outputs
 
    // Instantiate modules to implement design
