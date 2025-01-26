@@ -3,7 +3,7 @@
 
 module lab3 (
     input logic CLOCK_50,       // 50 MHz clock
-    input logic s1, s2          // Pushbuttons (active low)
+    input logic s1, s2,          // Pushbuttons (active low)
     (* altera_attribute = "-name WEAK_PULL_UP_RESISTOR ON" *) 
     input logic enc1_a, enc1_b, //Encoder 1 pins
     output logic spkr,          // Speaker output
