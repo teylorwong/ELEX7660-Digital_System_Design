@@ -23,7 +23,7 @@ module enc2freq (
     logic [2:0] note_index;
 
     // Sequential logic: Update note index based on encoder signals
-    always_ff @(posedge clk or negedge reset_n) begin
+    always_ff @(posedge clk or negedge reset_n) begin   // negedge because reset_n is active low
         if (!reset_n) begin
             note_index <= 3'd0;  // Reset to first note (C)
         end else begin
@@ -35,7 +35,7 @@ module enc2freq (
         end
     end
 
-    // Combinational logic: Map note index to frequency
+    // Map note index to frequency
     always_comb begin
         case (note_index)
             3'd0: freq = FREQ_C;
