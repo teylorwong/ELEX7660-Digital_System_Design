@@ -1,5 +1,5 @@
-// problem1_tb.sv - for Assignmetn 1: Testbench for the priority encoder
-// Teylor Wong 01-29-225
+// problem1_tb.sv - for Assignment 1: Testbench for the priority encoder
+// Teylor Wong 01-29-25
 
 module problem1_tb ();
     // Test signals

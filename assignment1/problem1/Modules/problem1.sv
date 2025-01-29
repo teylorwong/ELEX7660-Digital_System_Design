@@ -1,5 +1,5 @@
-// problem1.sv - for Assignmetn 1: designign a priority encoder
-// Teylor Wong 01-29-225
+// problem1.sv - for Assignment 1: designign a priority encoder
+// Teylor Wong 01-29-25
 
 module problem1 (
     input logic [3:0] a,
