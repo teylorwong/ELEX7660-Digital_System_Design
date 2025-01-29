@@ -1,0 +1,66 @@
+// encoder.sv - ELEX7660 module for Lab2
+// Teylor Wong 2025-01-14
+
+module encoder (
+    input logic a, b, clk,  // a corresponds to cw movement, b to ccw movement
+    output logic cw, ccw );
+
+    // Define states for the finite state machine
+    typedef enum logic [1:0] {
+        IDLE = 2'b00,
+        CW_DETECT = 2'b01,
+        CCW_DETECT = 2'b10
+    } state_t;
+
+    // Declare state variables of type state_t
+    state_t current_state, next_state;
+
+    logic prev_a, prev_b;
+
+    // Updates current state and stores previous values
+    always_ff @(posedge clk) begin
+        current_state <= next_state;
+        prev_a <= a;
+        prev_b <= b;
+    end
+
+    // Logic for next state and output logic
+    always_comb begin
+        // Default values
+        cw = 1'b0;
+        ccw = 1'b0;
+        next_state = current_state;
+
+        case (current_state)
+            IDLE: begin
+                if ((prev_a == 0) && (prev_b == 0)) begin
+                    if ((a == 1) && (b == 0)) next_state = CW_DETECT; // Transition to CW
+                    else if ((a == 0) && (b == 1)) next_state = CCW_DETECT; // Transition to CCW
+                end
+            end
+
+            CW_DETECT: begin
+                if ((prev_a == 1) && (prev_b == 0)) begin
+                    if ((a == 1) && (b == 0)) begin
+                        cw = 1'b1; // cw pulse
+                        next_state = IDLE;
+                    end
+                end
+            end
+
+            CCW_DETECT: begin
+                if ((prev_a == 0) && (prev_b == 1)) begin
+                    if ((a == 0) && (b == 1)) begin
+                        ccw = 1'b1; // ccw pulse
+                        next_state = IDLE;
+                    end
+                end
+            end
+
+            default: begin
+                next_state = IDLE;
+            end
+        endcase
+    end
+
+endmodule

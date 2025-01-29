@@ -1,0 +1,9 @@
+C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Test_Benches/encoder_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab2/Test_Benches/encoder_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling package encoder_tb_sv_unit
+-- Compiling module encoder_tb
+
+Top level modules:
+	encoder_tb
+
+} {} {}}
