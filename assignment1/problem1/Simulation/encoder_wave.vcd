@@ -1,0 +1,101 @@
+$date
+	Wed Jan 29 13:28:12 2025
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module encoder_tb $end
+$var reg 4 ! a [3:0] $end
+$var reg 2 " y [1:0] $end
+$var reg 1 # valid $end
+
+$scope module dut $end
+$var wire 1 $ a [3] $end
+$var wire 1 % a [2] $end
+$var wire 1 & a [1] $end
+$var wire 1 ' a [0] $end
+$var reg 2 ( y [1:0] $end
+$var reg 1 ) valid $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 !
+b0 "
+0#
+b0 (
+0)
+0'
+0&
+0%
+0$
+$end
+#10
+b1 !
+1'
+1)
+1#
+#20
+b10 !
+0'
+1&
+b1 (
+b1 "
+#30
+b11 !
+1'
+#40
+b100 !
+0'
+0&
+1%
+b10 (
+b10 "
+#50
+b101 !
+1'
+#60
+b110 !
+0'
+1&
+#70
+b111 !
+1'
+#80
+b1000 !
+0'
+0&
+0%
+1$
+b11 (
+b11 "
+#90
+b1001 !
+1'
+#100
+b1010 !
+0'
+1&
+#110
+b1011 !
+1'
+#120
+b1100 !
+0'
+0&
+1%
+#130
+b1101 !
+1'
+#140
+b1110 !
+0'
+1&
+#150
+b1111 !
+1'

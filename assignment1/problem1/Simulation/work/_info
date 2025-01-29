@@ -1,0 +1,58 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/18.1
+vencoder
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1738186071
+!i10b 1
+!s100 TTH45gUm2:j5SG:`IMl2f1
+I1eAZ?N1zYb7_S>Dn=28`^2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 problem1_sv_unit
+S1
+Z3 dC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment1/problem1/Simulation
+w1738185782
+8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment1/problem1/Modules/problem1.sv
+FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment1/problem1/Modules/problem1.sv
+L0 4
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1738186071.000000
+!s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment1/problem1/Modules/problem1.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment1/problem1/Modules/problem1.sv|
+!i113 1
+Z6 o-work work -sv
+Z7 tCvgOpt 0
+vencoder_tb
+R0
+R1
+!i10b 1
+!s100 dKmX^lK3:H<CU?A]iBLAm2
+IhcS_<f^4Zh8GEY<c25=EM0
+R2
+!s105 problem1_tb_sv_unit
+S1
+R3
+w1738186067
+8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment1/problem1/Simulation/problem1_tb.sv
+FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment1/problem1/Simulation/problem1_tb.sv
+L0 4
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment1/problem1/Simulation/problem1_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment1/problem1/Simulation/problem1_tb.sv|
+!i113 1
+R6
+R7

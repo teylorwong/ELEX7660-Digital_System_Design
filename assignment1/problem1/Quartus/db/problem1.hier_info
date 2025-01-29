@@ -1,0 +1,15 @@
+|problem1
+a[0] => Decoder2.IN3
+a[1] => Decoder1.IN2
+a[1] => Decoder2.IN2
+a[2] => Decoder0.IN1
+a[2] => Decoder1.IN1
+a[2] => Decoder2.IN1
+a[3] => Decoder0.IN0
+a[3] => Decoder1.IN0
+a[3] => Decoder2.IN0
+y[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+valid <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+
+
