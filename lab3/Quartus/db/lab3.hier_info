@@ -44,30 +44,24 @@ leds[7] <= <GND>
 
 
 |lab3|encoder:encoder_1
-a => always0.IN1
-a => always0.IN1
-a => always0.IN1
-a => always0.IN1
-a => always0.IN1
-a => prev_a.DATAIN
-a => always0.IN1
-a => always0.IN1
-a => always0.IN1
-a => always0.IN1
-b => always0.IN1
-b => always0.IN1
-b => always0.IN1
-b => always0.IN1
-b => always0.IN1
-b => prev_b.DATAIN
-b => always0.IN1
-b => always0.IN1
-b => always0.IN1
-b => always0.IN1
+a => a_debounce[0].DATAIN
+b => b_debounce[0].DATAIN
 clk => prev_b.CLK
 clk => prev_a.CLK
+clk => ccw_count[0].CLK
+clk => ccw_count[1].CLK
+clk => cw_count[0].CLK
+clk => cw_count[1].CLK
 clk => ccw~reg0.CLK
 clk => cw~reg0.CLK
+clk => b_stable.CLK
+clk => a_stable.CLK
+clk => b_debounce[0].CLK
+clk => b_debounce[1].CLK
+clk => b_debounce[2].CLK
+clk => a_debounce[0].CLK
+clk => a_debounce[1].CLK
+clk => a_debounce[2].CLK
 cw <= cw~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ccw <= ccw~reg0.DB_MAX_OUTPUT_PORT_TYPE
 

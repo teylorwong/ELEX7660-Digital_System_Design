@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab3
-Sat Jan 25 18:00:26 2025
+Wed Jan 29 21:45:41 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -46,13 +46,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Jan 25 18:00:26 2025       ;
+; Analysis & Synthesis Status     ; Successful - Wed Jan 29 21:45:41 2025       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; lab3                                        ;
 ; Top-level Entity Name           ; lab3                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 56                                          ;
+; Total registers                 ; 68                                          ;
 ; Total pins                      ; 18                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -189,25 +189,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 41             ;
+; Estimate of Logic utilization (ALMs needed) ; 46             ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 77             ;
+; Combinational ALUT usage for logic          ; 86             ;
 ;     -- 7 input functions                    ; 0              ;
 ;     -- 6 input functions                    ; 3              ;
-;     -- 5 input functions                    ; 10             ;
-;     -- 4 input functions                    ; 18             ;
-;     -- <=3 input functions                  ; 46             ;
+;     -- 5 input functions                    ; 12             ;
+;     -- 4 input functions                    ; 24             ;
+;     -- <=3 input functions                  ; 47             ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 56             ;
+; Dedicated logic registers                   ; 68             ;
 ;                                             ;                ;
 ; I/O pins                                    ; 18             ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 56             ;
-; Total fan-out                               ; 484            ;
-; Average fan-out                             ; 2.86           ;
+; Maximum fan-out                             ; 68             ;
+; Total fan-out                               ; 545            ;
+; Average fan-out                             ; 2.87           ;
 +---------------------------------------------+----------------+
 
 
@@ -216,11 +216,11 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name       ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------+-------------+--------------+
-; |lab3                      ; 77 (23)             ; 56 (16)                   ; 0                 ; 0          ; 18   ; 0            ; |lab3                     ; lab3        ; work         ;
+; |lab3                      ; 86 (23)             ; 68 (16)                   ; 0                 ; 0          ; 18   ; 0            ; |lab3                     ; lab3        ; work         ;
 ;    |decode2:decode2_0|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab3|decode2:decode2_0   ; decode2     ; work         ;
 ;    |decode7:decode7_0|     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab3|decode7:decode7_0   ; decode7     ; work         ;
 ;    |enc2freq:enc2freq_0|   ; 4 (4)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |lab3|enc2freq:enc2freq_0 ; enc2freq    ; work         ;
-;    |encoder:encoder_1|     ; 2 (2)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |lab3|encoder:encoder_1   ; encoder     ; work         ;
+;    |encoder:encoder_1|     ; 11 (11)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab3|encoder:encoder_1   ; encoder     ; work         ;
 ;    |tonegen:tonegen_0|     ; 40 (40)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |lab3|tonegen:tonegen_0   ; tonegen     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -241,7 +241,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 56    ;
+; Total registers                              ; 68    ;
 ; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 36    ;
@@ -256,8 +256,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab3|Mux1                 ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab3|Mux2                 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab3|Mux0                 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab3|Mux3                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -286,29 +286,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 56                          ;
+; arriav_ff             ; 68                          ;
 ;     CLR               ; 4                           ;
 ;     CLR SCLR          ; 1                           ;
 ;     ENA CLR SCLR      ; 31                          ;
-;     plain             ; 20                          ;
-; arriav_lcell_comb     ; 87                          ;
+;     plain             ; 32                          ;
+; arriav_lcell_comb     ; 96                          ;
 ;     arith             ; 46                          ;
 ;         1 data inputs ; 35                          ;
 ;         2 data inputs ; 3                           ;
 ;         3 data inputs ; 2                           ;
 ;         4 data inputs ; 6                           ;
-;     normal            ; 41                          ;
+;     normal            ; 50                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 10                          ;
 ;         2 data inputs ; 4                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 12                          ;
-;         5 data inputs ; 10                          ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 18                          ;
+;         5 data inputs ; 12                          ;
 ;         6 data inputs ; 3                           ;
 ; boundary_port         ; 18                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.20                        ;
-; Average LUT depth     ; 2.63                        ;
+; Average LUT depth     ; 2.52                        ;
 +-----------------------+-----------------------------+
 
 
@@ -327,14 +327,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Jan 25 18:00:21 2025
+    Info: Processing started: Wed Jan 29 21:45:35 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab3 -c lab3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /users/teylo/documents/github/elex7660-digital_system_design/lab3/modules/tonegen.sv
     Info (12023): Found entity 1: tonegen File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/tonegen.sv Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file /users/teylo/documents/github/elex7660-digital_system_design/lab3/modules/encoder.sv
-    Info (12023): Found entity 1: encoder File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/encoder.sv Line: 4
+    Info (12023): Found entity 1: encoder File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/encoder.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file /users/teylo/documents/github/elex7660-digital_system_design/lab3/modules/enc2freq.sv
     Info (12023): Found entity 1: enc2freq File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/enc2freq.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file /users/teylo/documents/github/elex7660-digital_system_design/lab3/modules/decode7.sv
@@ -347,7 +347,7 @@ Info (12127): Elaborating entity "lab3" for the top level hierarchy
 Info (12128): Elaborating entity "decode2" for hierarchy "decode2:decode2_0" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/lab3.sv Line: 27
 Info (12128): Elaborating entity "decode7" for hierarchy "decode7:decode7_0" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/lab3.sv Line: 28
 Info (12128): Elaborating entity "encoder" for hierarchy "encoder:encoder_1" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/lab3.sv Line: 29
-Warning (10036): Verilog HDL or VHDL warning at encoder.sv(17): object "current_state" assigned a value but never read File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/encoder.sv Line: 17
+Warning (10036): Verilog HDL or VHDL warning at encoder.sv(18): object "current_state" assigned a value but never read File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/encoder.sv Line: 18
 Info (12128): Elaborating entity "enc2freq" for hierarchy "enc2freq:enc2freq_0" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/lab3.sv Line: 30
 Info (12128): Elaborating entity "tonegen" for hierarchy "tonegen:tonegen_0" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/lab3.sv Line: 31
 Info (13014): Ignored 2 buffer(s)
@@ -357,14 +357,14 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 97 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 112 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 13 output pins
-    Info (21061): Implemented 79 logic cells
+    Info (21061): Implemented 94 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4892 megabytes
-    Info: Processing ended: Sat Jan 25 18:00:26 2025
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 4895 megabytes
+    Info: Processing ended: Wed Jan 29 21:45:41 2025
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:03
 
 
