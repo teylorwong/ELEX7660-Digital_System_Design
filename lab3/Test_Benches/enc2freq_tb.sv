@@ -1,6 +1,3 @@
-// enc2freq_tb.sv - Testbench for enc2freq module
-// Teylor Wong 01/25/25
-
 `timescale 1ns / 1ps
 
 module enc2freq_tb;
@@ -13,13 +10,7 @@ module enc2freq_tb;
     logic [31:0] expected_freq; // Expected frequency for verification
 
     // Instantiate the enc2freq module
-    enc2freq dut (
-        .cw(cw),
-        .ccw(ccw),
-        .freq(freq),
-        .reset_n(reset_n),
-        .clk(clk)
-    );
+    enc2freq dut (.cw(cw),.ccw(ccw),.freq(freq),.reset_n(reset_n),.clk(clk));
 
     // Clock generation
     initial begin
@@ -39,52 +30,32 @@ module enc2freq_tb;
         #20;
         reset_n = 1;
 
-        // Test 1: Rotate clockwise (increase frequency)
-        $display("Test 1: Rotate clockwise (increase frequency)");
-        repeat (4) begin
-            cw = 1; #10; cw = 0; #10; // Simulate 4 cw pulses
+        // Test 1: Rotate clockwise through all frequencies (C4 -> C5)
+        $display("Test 1: Rotate clockwise (C4 -> C5)");
+        for (int i = 0; i < 7; i++) begin
+            cw = 1; #10; cw = 0; #10; // Simulate 1 cw pulse
+            expected_freq = (i == 0) ? 295 : (i == 1) ? 328 : (i == 2) ? 349 : 
+                           (i == 3) ? 393 : (i == 4) ? 437 : (i == 5) ? 491 : 524;
+            if (freq == expected_freq)
+                $display("PASS: Frequency = %0d Hz (Expected %0d Hz)", freq, expected_freq);
+            else
+                $display("FAIL: Frequency = %0d Hz (Expected %0d Hz)", freq, expected_freq);
         end
-        expected_freq = 295; // Expected frequency (D4)
-        if (freq == expected_freq)
-            $display("PASS: Frequency = %0d Hz (Expected %0d Hz)", freq, expected_freq);
-        else
-            $display("FAIL: Frequency = %0d Hz (Expected %0d Hz)", freq, expected_freq);
 
-        // Test 2: Rotate counterclockwise (decrease frequency)
-        $display("Test 2: Rotate counterclockwise (decrease frequency)");
-        repeat (4) begin
-            ccw = 1; #10; ccw = 0; #10; // Simulate 4 ccw pulses
+        // Test 2: Rotate counterclockwise through all frequencies (C5 -> C4)
+        $display("Test 2: Rotate counterclockwise (C5 -> C4)");
+        for (int i = 0; i < 7; i++) begin
+            ccw = 1; #10; ccw = 0; #10; // Simulate 1 ccw pulse
+            expected_freq = (i == 0) ? 491 : (i == 1) ? 437 : (i == 2) ? 393 : 
+                           (i == 3) ? 349 : (i == 4) ? 328 : (i == 5) ? 295 : 262;
+            if (freq == expected_freq)
+                $display("PASS: Frequency = %0d Hz (Expected %0d Hz)", freq, expected_freq);
+            else
+                $display("FAIL: Frequency = %0d Hz (Expected %0d Hz)", freq, expected_freq);
         end
-        expected_freq = 262; // Expected frequency (C4)
-        if (freq == expected_freq)
-            $display("PASS: Frequency = %0d Hz (Expected %0d Hz)", freq, expected_freq);
-        else
-            $display("FAIL: Frequency = %0d Hz (Expected %0d Hz)", freq, expected_freq);
 
-        // Test 3: Rotate clockwise multiple times (wrap around)
-        $display("Test 3: Rotate clockwise multiple times (wrap around)");
-        repeat (16) begin
-            cw = 1; #10; cw = 0; #10; // Simulate 16 cw pulses
-        end
-        expected_freq = 262; // Expected frequency (C4, after wrapping around)
-        if (freq == expected_freq)
-            $display("PASS: Frequency = %0d Hz (Expected %0d Hz)", freq, expected_freq);
-        else
-            $display("FAIL: Frequency = %0d Hz (Expected %0d Hz)", freq, expected_freq);
-
-        // Test 4: Rotate counterclockwise multiple times (wrap around)
-        $display("Test 4: Rotate counterclockwise multiple times (wrap around)");
-        repeat (16) begin
-            ccw = 1; #10; ccw = 0; #10; // Simulate 16 ccw pulses
-        end
-        expected_freq = 262; // Expected frequency (C4, after wrapping around)
-        if (freq == expected_freq)
-            $display("PASS: Frequency = %0d Hz (Expected %0d Hz)", freq, expected_freq);
-        else
-            $display("FAIL: Frequency = %0d Hz (Expected %0d Hz)", freq, expected_freq);
-
-        // Test 5: Reset the module
-        $display("Test 5: Reset the module");
+        // Test 3: Reset the module
+        $display("Test 3: Reset the module");
         reset_n = 0; #20; reset_n = 1; // Apply reset
         expected_freq = 262; // Expected frequency (C4, after reset)
         if (freq == expected_freq)

@@ -5,19 +5,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	tonegen
 
-} {} {}} C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Test_Benches/enc2freq_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Test_Benches/enc2freq_tb.sv
+} {} {}} C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/lab3.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/lab3.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module enc2freq_tb
+-- Compiling module lab3
 
 Top level modules:
-	enc2freq_tb
-
-} {} {}} C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/enc2freq.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/enc2freq.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module enc2freq
-
-Top level modules:
-	enc2freq
+	lab3
 
 } {} {}} C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/decode2.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/decode2.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -26,12 +19,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	decode2
 
-} {} {}} C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/lab3.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/lab3.sv
+} {} {}} C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/decode7.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/decode7.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module lab3
+-- Compiling module decode7
 
 Top level modules:
-	lab3
+	decode7
 
 } {} {}} C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Test_Benches/tonegen_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Test_Benches/tonegen_tb.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -39,12 +32,5 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	tonegen_tb
-
-} {} {}} C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/decode7.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/decode7.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module decode7
-
-Top level modules:
-	decode7
 
 } {} {}}

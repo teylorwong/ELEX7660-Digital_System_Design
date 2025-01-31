@@ -10,7 +10,7 @@ cModel Technology
 dC:/intelFPGA_lite/18.1
 vdecode2
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1737852592
+Z1 !s110 1738346239
 !i10b 1
 !s100 MeI;a:EBTRUBf7V]ETEVi0
 I?Y_VUSMZa1HQ_R7=Roz9Z2
@@ -18,7 +18,7 @@ Z2 VDg1SIo80bB@j0V0VzS_@n1
 !s105 decode2_sv_unit
 S1
 Z3 dC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3
-Z4 w1737851353
+Z4 w1738277157
 8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/decode2.sv
 FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/decode2.sv
 L0 4
@@ -26,7 +26,7 @@ Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z6 !s108 1737852592.000000
+Z6 !s108 1738346238.000000
 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/decode2.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/decode2.sv|
 !i113 1
@@ -50,7 +50,7 @@ R5
 r1
 !s85 0
 31
-R6
+Z9 !s108 1738346239.000000
 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/decode7.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/decode7.sv|
 !i113 1
@@ -60,13 +60,13 @@ venc2freq
 R0
 R1
 !i10b 1
-!s100 g8;<BkBoO;>Tdz0hFX`E61
-IGV:jmXK:LDZEzceSfoFU90
+!s100 _HJ]2Uf=EV;[_;[l7E5li0
+I9B6KV>ITk6b;@eTan9c[P3
 R2
 !s105 enc2freq_sv_unit
 S1
 R3
-w1737851728
+w1738346229
 8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/enc2freq.sv
 FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/enc2freq.sv
 L0 5
@@ -74,7 +74,7 @@ R5
 r1
 !s85 0
 31
-R6
+R9
 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/enc2freq.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/enc2freq.sv|
 !i113 1
@@ -84,21 +84,21 @@ venc2freq_tb
 R0
 R1
 !i10b 1
-!s100 IEaMIiMLbhQ^ATU04z5Kn1
-II?M8NFlIO4Y@k3K=Pk5Vz2
+!s100 ]D@mXIXe9=Icj:iW1ofc=0
+IHAImW;JoRKj7YRGL=9ZmH1
 R2
 !s105 enc2freq_tb_sv_unit
 S1
 R3
-w1737852030
+w1738346228
 8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Test_Benches/enc2freq_tb.sv
 FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Test_Benches/enc2freq_tb.sv
-L0 6
+L0 3
 R5
 r1
 !s85 0
 31
-R6
+R9
 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Test_Benches/enc2freq_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Test_Benches/enc2freq_tb.sv|
 !i113 1
@@ -106,7 +106,7 @@ R7
 R8
 vlab3
 R0
-R1
+!s110 1738346238
 !i10b 1
 !s100 `YlVz3fA1hWdEVD5g_Oa13
 Iiz54A7^Kzmm_7Fm1i5gP>1
@@ -114,7 +114,7 @@ R2
 !s105 lab3_sv_unit
 S1
 R3
-w1737852587
+Z10 w1738277159
 8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/lab3.sv
 FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/lab3.sv
 L0 4
@@ -138,7 +138,7 @@ R2
 !s105 tonegen_sv_unit
 S1
 R3
-w1737851729
+R4
 8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/tonegen.sv
 FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/tonegen.sv
 L0 4
@@ -146,7 +146,7 @@ R5
 r1
 !s85 0
 31
-R6
+R9
 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/tonegen.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Modules/tonegen.sv|
 !i113 1
@@ -162,7 +162,7 @@ R2
 !s105 tonegen_tb_sv_unit
 S1
 R3
-w1737851374
+R10
 8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Test_Benches/tonegen_tb.sv
 FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Test_Benches/tonegen_tb.sv
 L0 9
@@ -170,7 +170,7 @@ R5
 r1
 !s85 0
 31
-R6
+R9
 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Test_Benches/tonegen_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab3/Test_Benches/tonegen_tb.sv|
 !i113 1

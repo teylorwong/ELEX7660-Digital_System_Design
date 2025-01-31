@@ -11,18 +11,18 @@ module enc2freq (
 
     // Define frequencies for the C Major scale (in Hz)
     localparam [31:0] FREQ_C     = 32'd262;
-    localparam [31:0] FREQ_D     = 32'd294;
-    localparam [31:0] FREQ_E     = 32'd330;
+    localparam [31:0] FREQ_D     = 32'd295;
+    localparam [31:0] FREQ_E     = 32'd328;
     localparam [31:0] FREQ_F     = 32'd349;
-    localparam [31:0] FREQ_G     = 32'd392;
-    localparam [31:0] FREQ_A     = 32'd440;
-    localparam [31:0] FREQ_B     = 32'd494;
-    localparam [31:0] FREQ_C_HIGH = 32'd523;
+    localparam [31:0] FREQ_G     = 32'd393;
+    localparam [31:0] FREQ_A     = 32'd437;
+    localparam [31:0] FREQ_B     = 32'd491;
+    localparam [31:0] FREQ_C_HIGH = 32'd524;
 
     // Current note index
     logic [2:0] note_index;
 
-    // Sequential logic: Update note index based on encoder signals
+    // Had some help form ChatGPT on this block of code
     always_ff @(posedge clk or negedge reset_n) begin   // negedge because reset_n is active low
         if (!reset_n) begin
             note_index <= 3'd0;  // Reset to first note (C)
