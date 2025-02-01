@@ -1,0 +1,7 @@
+
+State Machine - |lab4|adcinterface:adcinterface_0|state
+Name state.STATE_CAPTURE_DATA state.STATE_SEND_CONFIG state.STATE_CONVST_PULSE state.STATE_IDLE 
+state.STATE_IDLE 0 0 0 0 
+state.STATE_CONVST_PULSE 0 0 1 1 
+state.STATE_SEND_CONFIG 0 1 0 1 
+state.STATE_CAPTURE_DATA 1 0 0 1 

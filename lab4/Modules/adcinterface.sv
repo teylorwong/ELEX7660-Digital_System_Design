@@ -2,57 +2,80 @@
 // Teylo Wong 01/31/25
 
 module adcinterface(
-    input  logic clk, reset_n,     // clock and reset
-    input  logic [2:0] chan,       // ADC channel to sample
-    output logic [11:0] result,    // ADC result
+    input logic clk, reset_n,    // clock and reset
+    input logic [2:0] chan,      // ADC channel to sample
+    output logic [11:0] result,  // ADC result
     // ltc2308 signals
-    input  logic ADC_SDO,
-    output logic ADC_CONVST, ADC_SCK, ADC_SDI );
+    output logic ADC_CONVST, ADC_SCK, ADC_SDI,
+    input logic ADC_SDO
+);
 
-    typedef enum logic [2:0] {IDLE, CONV_HIGH, CONV_LOW, SHIFTING, WAIT_NEXT} state_t;
-    state_t state;
-    logic [3:0] sck_count;
-    logic [5:0] config_word;
+    // Define states for the state machine
+    typedef enum logic [1:0] {
+        STATE_IDLE,          // Waiting to start conversion
+        STATE_CONVST_PULSE,  // Pulse ADC_CONVST high
+        STATE_SEND_CONFIG,   // Send configuration bits
+        STATE_CAPTURE_DATA   // Capture ADC result
+    } state_t;
 
-    // Config word for SDI signal: S/D - O/S - S1 - S0 - UNI - SLP
-    assign config_word = {1'b1, 1'b0, chan[2], chan[1], chan[0], 1'b0};
-    // gate the clock output to the ADC_SCK signal
-    assign ADC_SCK = (state == SHIFTING) ? clk : 1'b0;
+    state_t state;          // Current state
+    logic [3:0] sck_count;      // sck_counter for clock cycles
 
-    // ChatGPT helped me with this block of code
-    always_ff @(posedge clk or negedge reset_n) begin
-        if (!reset_n) begin
-            state <= IDLE;
-            sck_count <= '0;
-            result <= '0;
-            ADC_CONVST <= 1'b1;
-            ADC_SDI <= 1'b0;
+    // State transition logic
+    always_ff @(negedge clk or negedge reset_n) begin
+        if (~reset_n) begin
+            state <= STATE_IDLE;
+            sck_count <= 4'b0000;
+            ADC_CONVST <= 1'b0;
         end else begin
             case (state)
-                IDLE: begin
-                    ADC_CONVST <= 1'b1;
-                    sck_count <= '0;
-                    state <= CONV_HIGH;
+                STATE_IDLE: begin
+                    state <= STATE_CONVST_PULSE;
+                    sck_count <= 4'b0000;
                 end
-                CONV_HIGH: begin
-                    ADC_CONVST <= 1'b0;
-                    state <= CONV_LOW;
+
+                STATE_CONVST_PULSE: begin
+                    ADC_CONVST <= (sck_count == 4'b0000) ? 1'b1 : 1'b0;  // Pulse CONVST high for one cycle
+                    state <= (sck_count == 4'b0000) ? STATE_CONVST_PULSE : STATE_SEND_CONFIG;
+                    sck_count <= sck_count + 1;
                 end
-                CONV_LOW: begin
-                    ADC_CONVST <= 1'b1;
-                    state <= SHIFTING;
+
+                STATE_SEND_CONFIG: begin
+                    state <= (sck_count == 4'b1101) ? STATE_CAPTURE_DATA : STATE_SEND_CONFIG;
+                    sck_count <= sck_count + 1;
                 end
-                SHIFTING: begin
-                    if (sck_count < 12) begin
-                        if (!ADC_SCK) ADC_SDI <= config_word[5 - sck_count];
-                        else begin
-                            result <= {result[10:0], ADC_SDO};
-                            sck_count <= sck_count + 1'b1;
-                        end
-                    end else state <= WAIT_NEXT;
+
+                STATE_CAPTURE_DATA: begin
+                    state <= (sck_count == 4'b1110) ? STATE_IDLE : STATE_CAPTURE_DATA;
+                    sck_count <= sck_count + 1;
                 end
-                WAIT_NEXT: state <= IDLE;
+
+                default: state <= STATE_IDLE;
             endcase
         end
     end
+
+    // Clock gating for ADC_SCK
+    assign ADC_SCK = ((sck_count > 4'b0010) && (sck_count <= 4'b1110)) ? clk : 1'b0;
+
+    // Control ADC_SDI based on the sck_count value
+    always_ff @(negedge clk) begin
+        ADC_SDI <= (sck_count == 4'b0010) ? 1'b1 :
+                   (sck_count == 4'b0011) ? chan[0] :
+                   (sck_count == 4'b0100) ? chan[2] :
+                   (sck_count == 4'b0101) ? chan[1] :
+                   (sck_count == 4'b0110) ? 1'b1 :
+                   (sck_count == 4'b0111) ? 1'b0 :
+                   1'b0;  // Default value
+    end
+
+    // Capture ADC_SDO data into the result register
+    always_ff @(posedge clk or negedge reset_n) begin
+        if (~reset_n) begin
+            result <= 12'h0;
+        end else if ((sck_count > 4'b0010) && (sck_count <= 4'b1110)) begin
+            result <= {result[10:0], ADC_SDO};  // Shift left and capture ADC_SDO
+        end
+    end
+
 endmodule

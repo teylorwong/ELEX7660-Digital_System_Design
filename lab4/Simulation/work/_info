@@ -10,15 +10,15 @@ cModel Technology
 dC:/intelFPGA_lite/18.1
 vadcinterface
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1738381544
+Z1 !s110 1738438785
 !i10b 1
-!s100 LKHa`C<>]dzRELZ3Rk;7j0
-I0Sm4LBgZF5?iMem]BeBQ13
+!s100 KEkS^?a01`jJKbA4bbN=P0
+IZ39]WSdZQJ2:c=33RXnRA3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 !s105 adcinterface_sv_unit
 S1
 Z3 dC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Simulation
-w1738381536
+w1738438749
 8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Modules/adcinterface.sv
 FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Modules/adcinterface.sv
 L0 4
@@ -26,7 +26,7 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1738381544.000000
+Z5 !s108 1738438785.000000
 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Modules/adcinterface.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Modules/adcinterface.sv|
 !i113 1
@@ -42,7 +42,7 @@ R2
 !s105 adcinterface_tb_sv_unit
 S1
 R3
-w1738365955
+w1738437252
 8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Simulation/adcinterface_tb.sv
 FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Simulation/adcinterface_tb.sv
 L0 6

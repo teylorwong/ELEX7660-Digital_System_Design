@@ -18,9 +18,9 @@ module enc2chan (
             chan_index <= 3'd0;  // Reset to first channel 0
         end else begin
             if (cw && !ccw) begin
-                note_index <= (chan_index == 3'd7) ? 3'd0 : chan_index + 1'b1;
+                chan_index <= (chan_index == 3'd7) ? 3'd0 : chan_index + 1'b1;
             end else if (!cw && ccw) begin
-                note_index <= (chan_index == 3'd0) ? 3'd7 : chan_index - 1'b1;
+                chan_index <= (chan_index == 3'd0) ? 3'd7 : chan_index - 1'b1;
             end
         end
     end

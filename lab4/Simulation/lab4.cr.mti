@@ -1,11 +1,4 @@
-C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Modules/adcinterface.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Modules/adcinterface.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module adcinterface
-
-Top level modules:
-	adcinterface
-
-} {} {}} C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Simulation/adcinterface_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Simulation/adcinterface_tb.sv
+C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Simulation/adcinterface_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Simulation/adcinterface_tb.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module adcinterface_tb
 
