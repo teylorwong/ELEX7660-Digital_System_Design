@@ -17,13 +17,13 @@ module tonegen
         toggle <= 0;
         spkr <= 0;
         end else if (onOff) begin
-        if (count >= FCLK) begin
-            count <= 0;
-            toggle <= ~toggle;              // Toggle the speaker output
-            spkr <= toggle;
-        end else begin
-            count <= count + (freq << 1);   // Increment by 2 * freq
-        end
+            if (count >= FCLK) begin
+                count <= 0;
+                toggle <= ~toggle;              // Toggle the speaker output
+                spkr <= toggle;
+            end else begin
+                count <= count + (freq << 1);   // Increment by 2 * freq
+            end
         end else begin
         spkr <= 0;                          // Mute the speaker
         end
