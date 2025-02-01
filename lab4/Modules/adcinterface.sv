@@ -1,3 +1,6 @@
+// adcinterface.sv - lab4 module that interfaces with the ltc2308 ADC
+// Teylo Wong 01/31/25
+
 module adcinterface(
     input  logic clk, reset_n,     // clock and reset
     input  logic [2:0] chan,       // ADC channel to sample
@@ -6,17 +9,17 @@ module adcinterface(
     input  logic ADC_SDO,
     output logic ADC_CONVST, ADC_SCK, ADC_SDI );
 
-    // 6 bit word for SDI signal
     typedef enum logic [2:0] {IDLE, CONV_HIGH, CONV_LOW, SHIFTING, WAIT_NEXT} state_t;
     state_t state;
     logic [3:0] sck_count;
     logic [5:0] config_word;
 
-    // Config word: S/D - O/S - S1 - S0 - UNI - SLP
+    // Config word for SDI signal: S/D - O/S - S1 - S0 - UNI - SLP
     assign config_word = {1'b1, 1'b0, chan[2], chan[1], chan[0], 1'b0};
     // gate the clock output to the ADC_SCK signal
     assign ADC_SCK = (state == SHIFTING) ? clk : 1'b0;
 
+    // ChatGPT helped me with this block of code
     always_ff @(posedge clk or negedge reset_n) begin
         if (!reset_n) begin
             state <= IDLE;
