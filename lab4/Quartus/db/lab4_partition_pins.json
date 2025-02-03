@@ -48,11 +48,27 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
+					"name" : "ADC_CONVST",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_SCK",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_SDI",
 					"strict" : false
 				},
 				{
 					"name" : "s1",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_SDO",
 					"strict" : false
 				},
 				{

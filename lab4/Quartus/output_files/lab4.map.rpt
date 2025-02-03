@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab4
-Sat Feb 01 12:49:00 2025
+Mon Feb 03 10:21:26 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -15,14 +15,12 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |lab4|adcinterface:adcinterface_0|state
   9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for Top-level Entity: |lab4
- 14. Port Connectivity Checks: "adcinterface:adcinterface_0"
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for Top-level Entity: |lab4
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -48,14 +46,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Feb 01 12:49:00 2025       ;
+; Analysis & Synthesis Status     ; Successful - Mon Feb 03 10:21:26 2025       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; lab4                                        ;
 ; Top-level Entity Name           ; lab4                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 35                                          ;
-; Total pins                      ; 17                                          ;
+; Total registers                 ; 73                                          ;
+; Total pins                      ; 21                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -168,7 +166,8 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-14        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-14        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -186,44 +185,45 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 23             ;
-;                                             ;                ;
-; Combinational ALUT usage for logic          ; 42             ;
-;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 0              ;
-;     -- 5 input functions                    ; 10             ;
-;     -- 4 input functions                    ; 9              ;
-;     -- <=3 input functions                  ; 23             ;
-;                                             ;                ;
-; Dedicated logic registers                   ; 35             ;
-;                                             ;                ;
-; I/O pins                                    ; 17             ;
-;                                             ;                ;
-; Total DSP Blocks                            ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 35             ;
-; Total fan-out                               ; 235            ;
-; Average fan-out                             ; 2.12           ;
-+---------------------------------------------+----------------+
++----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                    ;
++---------------------------------------------+------------------+
+; Resource                                    ; Usage            ;
++---------------------------------------------+------------------+
+; Estimate of Logic utilization (ALMs needed) ; 43               ;
+;                                             ;                  ;
+; Combinational ALUT usage for logic          ; 63               ;
+;     -- 7 input functions                    ; 1                ;
+;     -- 6 input functions                    ; 7                ;
+;     -- 5 input functions                    ; 7                ;
+;     -- 4 input functions                    ; 20               ;
+;     -- <=3 input functions                  ; 28               ;
+;                                             ;                  ;
+; Dedicated logic registers                   ; 73               ;
+;                                             ;                  ;
+; I/O pins                                    ; 21               ;
+;                                             ;                  ;
+; Total DSP Blocks                            ; 0                ;
+;                                             ;                  ;
+; Maximum fan-out node                        ; clk_div_count[5] ;
+; Maximum fan-out                             ; 40               ;
+; Total fan-out                               ; 468              ;
+; Average fan-out                             ; 2.63             ;
++---------------------------------------------+------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                          ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name       ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------+-------------+--------------+
-; |lab4                      ; 42 (17)             ; 35 (16)                   ; 0                 ; 0          ; 17   ; 0            ; |lab4                     ; lab4        ; work         ;
-;    |decode2:decode2_0|     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab4|decode2:decode2_0   ; decode2     ; work         ;
-;    |decode7:decode7_0|     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab4|decode7:decode7_0   ; decode7     ; work         ;
-;    |enc2chan:enc2chan_0|   ; 4 (4)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |lab4|enc2chan:enc2chan_0 ; enc2chan    ; work         ;
-;    |encoder:encoder_1|     ; 11 (11)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab4|encoder:encoder_1   ; encoder     ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------+-------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                         ;
++----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+--------------+--------------+
+; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Entity Name  ; Library Name ;
++----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+--------------+--------------+
+; |lab4                            ; 63 (25)             ; 73 (32)                   ; 0                 ; 0          ; 21   ; 0            ; |lab4                             ; lab4         ; work         ;
+;    |adcinterface:adcinterface_0| ; 12 (12)             ; 22 (22)                   ; 0                 ; 0          ; 0    ; 0            ; |lab4|adcinterface:adcinterface_0 ; adcinterface ; work         ;
+;    |decode2:decode2_0|           ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab4|decode2:decode2_0           ; decode2      ; work         ;
+;    |decode7:decode7_0|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab4|decode7:decode7_0           ; decode7      ; work         ;
+;    |enc2chan:enc2chan_0|         ; 4 (4)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |lab4|enc2chan:enc2chan_0         ; enc2chan     ; work         ;
+;    |encoder:encoder_1|           ; 11 (11)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab4|encoder:encoder_1           ; encoder      ; work         ;
++----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -240,41 +240,15 @@ Encoding Type:  One-Hot
 +--------------------------+--------------------------+-------------------------+--------------------------+------------------+
 
 
-+-----------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                            ;
-+------------------------------------------------------+----------------------------------------+
-; Register name                                        ; Reason for Removal                     ;
-+------------------------------------------------------+----------------------------------------+
-; adcinterface:adcinterface_0|result[0..11]            ; Stuck at GND due to stuck port data_in ;
-; adcinterface:adcinterface_0|state~6                  ; Lost fanout                            ;
-; adcinterface:adcinterface_0|state~7                  ; Lost fanout                            ;
-; adcinterface:adcinterface_0|sck_count[0..3]          ; Lost fanout                            ;
-; adcinterface:adcinterface_0|state.STATE_IDLE         ; Lost fanout                            ;
-; adcinterface:adcinterface_0|state.STATE_CONVST_PULSE ; Lost fanout                            ;
-; adcinterface:adcinterface_0|state.STATE_SEND_CONFIG  ; Lost fanout                            ;
-; adcinterface:adcinterface_0|state.STATE_CAPTURE_DATA ; Lost fanout                            ;
-; Total Number of Removed Registers = 22               ;                                        ;
-+------------------------------------------------------+----------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                            ;
-+---------------------------------------+---------------------------+------------------------------------------------------------------------------------+
-; Register name                         ; Reason for Removal        ; Registers Removed due to This Register                                             ;
-+---------------------------------------+---------------------------+------------------------------------------------------------------------------------+
-; adcinterface:adcinterface_0|result[0] ; Stuck at GND              ; adcinterface:adcinterface_0|result[1], adcinterface:adcinterface_0|result[2],      ;
-;                                       ; due to stuck port data_in ; adcinterface:adcinterface_0|result[3], adcinterface:adcinterface_0|result[4],      ;
-;                                       ;                           ; adcinterface:adcinterface_0|result[5], adcinterface:adcinterface_0|result[6],      ;
-;                                       ;                           ; adcinterface:adcinterface_0|result[7], adcinterface:adcinterface_0|result[8],      ;
-;                                       ;                           ; adcinterface:adcinterface_0|result[9], adcinterface:adcinterface_0|result[10],     ;
-;                                       ;                           ; adcinterface:adcinterface_0|result[11], adcinterface:adcinterface_0|sck_count[3],  ;
-;                                       ;                           ; adcinterface:adcinterface_0|sck_count[2], adcinterface:adcinterface_0|sck_count[1] ;
-; adcinterface:adcinterface_0|state~6   ; Lost Fanouts              ; adcinterface:adcinterface_0|sck_count[0],                                          ;
-;                                       ;                           ; adcinterface:adcinterface_0|state.STATE_IDLE,                                      ;
-;                                       ;                           ; adcinterface:adcinterface_0|state.STATE_CONVST_PULSE,                              ;
-;                                       ;                           ; adcinterface:adcinterface_0|state.STATE_SEND_CONFIG,                               ;
-;                                       ;                           ; adcinterface:adcinterface_0|state.STATE_CAPTURE_DATA                               ;
-+---------------------------------------+---------------------------+------------------------------------------------------------------------------------+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; adcinterface:adcinterface_0|state~6   ; Lost fanout        ;
+; adcinterface:adcinterface_0|state~7   ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -282,12 +256,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 35    ;
+; Total registers                              ; 73    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Asynchronous Clear ; 40    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 3     ;
+; Number of registers using Clock Enable       ; 27    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -298,6 +272,7 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 ; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |lab4|enc2chan:enc2chan_0|chan_index[0] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |lab4|Mux3                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 
 
@@ -311,40 +286,33 @@ Encoding Type:  One-Hot
 +-----------------------+-------+------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "adcinterface:adcinterface_0"                                                              ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                             ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; ADC_CONVST ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; ADC_SCK    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; ADC_SDI    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 35                          ;
-;     ENA CLR           ; 3                           ;
-;     plain             ; 32                          ;
-; arriav_lcell_comb     ; 52                          ;
+; arriav_ff             ; 73                          ;
+;     CLR               ; 13                          ;
+;     ENA CLR           ; 27                          ;
+;     plain             ; 33                          ;
+; arriav_lcell_comb     ; 73                          ;
 ;     arith             ; 15                          ;
 ;         1 data inputs ; 14                          ;
 ;         2 data inputs ; 1                           ;
-;     normal            ; 37                          ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 57                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 11                          ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 9                           ;
-;         5 data inputs ; 10                          ;
-; boundary_port         ; 17                          ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 3                           ;
+;         4 data inputs ; 20                          ;
+;         5 data inputs ; 7                           ;
+;         6 data inputs ; 7                           ;
+; boundary_port         ; 21                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.40                        ;
-; Average LUT depth     ; 1.69                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.66                        ;
 +-----------------------+-----------------------------+
 
 
@@ -363,7 +331,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Feb 01 12:48:55 2025
+    Info: Processing started: Mon Feb 03 10:21:21 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab4 -c lab4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
@@ -380,33 +348,33 @@ Info (12021): Found 1 design units, including 1 entities, in source file /users/
 Info (12021): Found 1 design units, including 1 entities, in source file /users/teylo/documents/github/elex7660-digital_system_design/lab4/modules/adcinterface.sv
     Info (12023): Found entity 1: adcinterface File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Modules/adcinterface.sv Line: 4
 Info (12127): Elaborating entity "lab4" for the top level hierarchy
-Info (12128): Elaborating entity "decode2" for hierarchy "decode2:decode2_0" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/lab4.sv Line: 35
-Info (12128): Elaborating entity "decode7" for hierarchy "decode7:decode7_0" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/lab4.sv Line: 36
-Info (12128): Elaborating entity "encoder" for hierarchy "encoder:encoder_1" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/lab4.sv Line: 37
+Info (12128): Elaborating entity "decode2" for hierarchy "decode2:decode2_0" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/lab4.sv Line: 36
+Info (12128): Elaborating entity "decode7" for hierarchy "decode7:decode7_0" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/lab4.sv Line: 37
+Info (12128): Elaborating entity "encoder" for hierarchy "encoder:encoder_1" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/lab4.sv Line: 38
 Warning (10036): Verilog HDL or VHDL warning at encoder.sv(18): object "current_state" assigned a value but never read File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Modules/encoder.sv Line: 18
-Info (12128): Elaborating entity "enc2chan" for hierarchy "enc2chan:enc2chan_0" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/lab4.sv Line: 38
-Info (12128): Elaborating entity "adcinterface" for hierarchy "adcinterface:adcinterface_0" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/lab4.sv Line: 40
-Warning (10230): Verilog HDL assignment warning at adcinterface.sv(40): truncated value with size 32 to match size of target (4) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Modules/adcinterface.sv Line: 40
-Warning (10230): Verilog HDL assignment warning at adcinterface.sv(45): truncated value with size 32 to match size of target (4) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Modules/adcinterface.sv Line: 45
-Warning (10230): Verilog HDL assignment warning at adcinterface.sv(50): truncated value with size 32 to match size of target (4) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Modules/adcinterface.sv Line: 50
+Info (12128): Elaborating entity "enc2chan" for hierarchy "enc2chan:enc2chan_0" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/lab4.sv Line: 39
+Info (12128): Elaborating entity "adcinterface" for hierarchy "adcinterface:adcinterface_0" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/lab4.sv Line: 41
+Warning (10230): Verilog HDL assignment warning at adcinterface.sv(39): truncated value with size 32 to match size of target (4) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Modules/adcinterface.sv Line: 39
+Warning (10230): Verilog HDL assignment warning at adcinterface.sv(43): truncated value with size 32 to match size of target (4) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Modules/adcinterface.sv Line: 43
+Warning (10230): Verilog HDL assignment warning at adcinterface.sv(47): truncated value with size 32 to match size of target (4) File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/Modules/adcinterface.sv Line: 47
 Info (13014): Ignored 2 buffer(s)
     Info (13019): Ignored 2 SOFT buffer(s)
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "leds[7]" is stuck at GND File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/lab4.sv Line: 9
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 10 registers lost all their fanouts during netlist optimizations.
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "s2" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/lab4.sv Line: 6
-Info (21057): Implemented 67 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 50 logic cells
+Info (21057): Implemented 116 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21061): Implemented 95 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4897 megabytes
-    Info: Processing ended: Sat Feb 01 12:49:00 2025
+    Info: Peak virtual memory: 4922 megabytes
+    Info: Processing ended: Mon Feb 03 10:21:26 2025
     Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Total CPU time (on all processors): 00:00:03
 
 

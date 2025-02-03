@@ -12,7 +12,7 @@ module enc2chan (
     // 3 bits for 8 channels (0-7)
     logic [2:0] chan_index;
 
-    // Had some help form ChatGPT on this block of code
+    // Had some help from ChatGPT on this block of code
     always_ff @(posedge clk or negedge reset_n) begin   // negedge because reset_n is active low
         if (!reset_n) begin
             chan_index <= 3'd0;  // Reset to first channel 0

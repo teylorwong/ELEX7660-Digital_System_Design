@@ -16,6 +16,10 @@ ct[0] <= decode2:decode2_0.ct
 ct[1] <= decode2:decode2_0.ct
 ct[2] <= decode2:decode2_0.ct
 ct[3] <= decode2:decode2_0.ct
+ADC_CONVST <= adcinterface:adcinterface_0.ADC_CONVST
+ADC_SCK <= adcinterface:adcinterface_0.ADC_SCK
+ADC_SDI <= adcinterface:adcinterface_0.ADC_SDI
+ADC_SDO => ADC_SDO.IN1
 
 
 |lab4|decode2:decode2_0

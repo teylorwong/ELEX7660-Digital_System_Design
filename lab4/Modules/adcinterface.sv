@@ -33,23 +33,19 @@ module adcinterface(
                     state <= STATE_CONVST_PULSE;
                     sck_count <= 4'b0000;
                 end
-
                 STATE_CONVST_PULSE: begin
                     ADC_CONVST <= (sck_count == 4'b0000) ? 1'b1 : 1'b0;  // Pulse CONVST high for one cycle
                     state <= (sck_count == 4'b0000) ? STATE_CONVST_PULSE : STATE_SEND_CONFIG;
                     sck_count <= sck_count + 1;
                 end
-
                 STATE_SEND_CONFIG: begin
                     state <= (sck_count == 4'b1101) ? STATE_CAPTURE_DATA : STATE_SEND_CONFIG;
                     sck_count <= sck_count + 1;
                 end
-
                 STATE_CAPTURE_DATA: begin
                     state <= (sck_count == 4'b1110) ? STATE_IDLE : STATE_CAPTURE_DATA;
                     sck_count <= sck_count + 1;
                 end
-
                 default: state <= STATE_IDLE;
             endcase
         end

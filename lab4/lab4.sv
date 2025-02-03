@@ -7,29 +7,30 @@ module lab4 (
     (* altera_attribute = "-name WEAK_PULL_UP_RESISTOR ON" *) 
     input logic enc1_a, enc1_b, // Encoder 1 pins
     output logic [7:0] leds,    // 7-seg LED enables
-    output logic [3:0] ct       // Digit cathodes
+    output logic [3:0] ct,       // Digit cathodes
+    // ADC Signals
+    output logic ADC_CONVST, ADC_SCK, ADC_SDI,
+    input logic ADC_SDO
 );
 
     logic [2:0] chan;           // Channel from enc2chan
     logic reset_n;              // Reset
     logic enc1_cw, enc1_ccw;    // Encoder module outputs
     logic [11:0] result;        // ADC result
-    logic ADC_SDO;              // ADC serial data out
-    logic ADC_CONVST;           // ADC conversion start
-    logic ADC_SCK;              // ADC serial clock
-    logic ADC_SDI;              // ADC serial data in
+    logic [11:0] result_reg;
 
     // Display lower 16 bits of freq on 7-segment display
     logic [1:0] digit;          // Select digit to display
     logic [3:0] disp_digit;     // Current digit of count to display
     logic [15:0] clk_div_count; // Count used to divide clock
     logic adc_clk;              // Divided clock for ADC (1.5625 MHz)
+    logic [3:0] adc_cycle_count;// Counter for ADC cycles (12+1)
 
     // Pushbuttons for control signals
     assign reset_n = s1;        // s1 is active low reset
 
     // Generate a 1.5625 MHz clock for the ADC (50 MHz / 32)
-    assign adc_clk = clk_div_count[4];  // Use bit 4 for 1.5625 MHz
+    assign adc_clk = clk_div_count[5];  // Use bit 5 for 1.5625 MHz
 
     // Instantiate modules to implement design
     decode2 decode2_0 (.digit(digit), .ct(ct));
@@ -46,13 +47,31 @@ module lab4 (
     // Assign the top two bits of count to select digit to display
     assign digit = clk_div_count[15:14];
 
+    // Update result_reg after 12 cycles of adc_clk
+    always_ff @(posedge adc_clk or negedge reset_n) begin
+        if (~reset_n) begin
+            result_reg <= 12'b0000_0000_0000;
+        end else if (adc_cycle_count == 4'b1101) begin // After 12 cycles (one extra start cycle)
+            result_reg <= result;
+        end
+    end
+
+    // Counter for ADC cycles (0-11)
+    always_ff @(posedge adc_clk or negedge reset_n) begin
+        if (~reset_n) begin
+            adc_cycle_count <= 4'b0000;
+        end else begin
+            adc_cycle_count <= adc_cycle_count + 1'b1;
+        end
+    end
+
     // Select digit to display (disp_digit)
     always_comb begin
         case (digit)
-            2'b00 : disp_digit = result[3:0];     // Least significant nibble
-            2'b01 : disp_digit = result[7:4];     // Middle nibble
-            2'b10 : disp_digit = result[11:8];    // Most significant nibble
-            2'b11 : disp_digit = {1'b0, chan};    // Display channel number (0-7)
+            2'b00 : disp_digit = result_reg[3:0];   // Least significant nibble
+            2'b01 : disp_digit = result_reg[7:4];   // Middle nibble
+            2'b10 : disp_digit = result_reg[11:8];  // Most significant nibble
+            2'b11 : disp_digit = {1'b0, chan};      // Display channel number (0-7)
             default: disp_digit = 4'b0000;
         endcase
     end
