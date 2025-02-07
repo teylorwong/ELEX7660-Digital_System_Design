@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab4
-Mon Feb 03 10:21:26 2025
+Thu Feb 06 18:45:55 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -46,13 +46,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Feb 03 10:21:26 2025       ;
+; Analysis & Synthesis Status     ; Successful - Thu Feb 06 18:45:55 2025       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; lab4                                        ;
 ; Top-level Entity Name           ; lab4                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 73                                          ;
+; Total registers                 ; 74                                          ;
 ; Total pins                      ; 21                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -166,8 +166,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-14        ;   0.0%      ;
+;     Processors 2-14        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -190,25 +189,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+------------------+
 ; Resource                                    ; Usage            ;
 +---------------------------------------------+------------------+
-; Estimate of Logic utilization (ALMs needed) ; 43               ;
+; Estimate of Logic utilization (ALMs needed) ; 44               ;
 ;                                             ;                  ;
-; Combinational ALUT usage for logic          ; 63               ;
+; Combinational ALUT usage for logic          ; 64               ;
 ;     -- 7 input functions                    ; 1                ;
 ;     -- 6 input functions                    ; 7                ;
-;     -- 5 input functions                    ; 7                ;
-;     -- 4 input functions                    ; 20               ;
+;     -- 5 input functions                    ; 9                ;
+;     -- 4 input functions                    ; 19               ;
 ;     -- <=3 input functions                  ; 28               ;
 ;                                             ;                  ;
-; Dedicated logic registers                   ; 73               ;
+; Dedicated logic registers                   ; 74               ;
 ;                                             ;                  ;
 ; I/O pins                                    ; 21               ;
 ;                                             ;                  ;
 ; Total DSP Blocks                            ; 0                ;
 ;                                             ;                  ;
 ; Maximum fan-out node                        ; clk_div_count[5] ;
-; Maximum fan-out                             ; 40               ;
-; Total fan-out                               ; 468              ;
-; Average fan-out                             ; 2.63             ;
+; Maximum fan-out                             ; 41               ;
+; Total fan-out                               ; 477              ;
+; Average fan-out                             ; 2.65             ;
 +---------------------------------------------+------------------+
 
 
@@ -217,7 +216,7 @@ refer to the applicable agreement for further details.
 +----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+--------------+--------------+
 ; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Entity Name  ; Library Name ;
 +----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+--------------+--------------+
-; |lab4                            ; 63 (25)             ; 73 (32)                   ; 0                 ; 0          ; 21   ; 0            ; |lab4                             ; lab4         ; work         ;
+; |lab4                            ; 64 (26)             ; 74 (33)                   ; 0                 ; 0          ; 21   ; 0            ; |lab4                             ; lab4         ; work         ;
 ;    |adcinterface:adcinterface_0| ; 12 (12)             ; 22 (22)                   ; 0                 ; 0          ; 0    ; 0            ; |lab4|adcinterface:adcinterface_0 ; adcinterface ; work         ;
 ;    |decode2:decode2_0|           ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab4|decode2:decode2_0           ; decode2      ; work         ;
 ;    |decode7:decode7_0|           ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab4|decode7:decode7_0           ; decode7      ; work         ;
@@ -256,10 +255,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 73    ;
+; Total registers                              ; 74    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 40    ;
+; Number of registers using Asynchronous Clear ; 41    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 27    ;
 ; Number of registers using Preset             ; 0     ;
@@ -291,28 +290,28 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 73                          ;
-;     CLR               ; 13                          ;
+; arriav_ff             ; 74                          ;
+;     CLR               ; 14                          ;
 ;     ENA CLR           ; 27                          ;
 ;     plain             ; 33                          ;
-; arriav_lcell_comb     ; 73                          ;
+; arriav_lcell_comb     ; 74                          ;
 ;     arith             ; 15                          ;
 ;         1 data inputs ; 14                          ;
 ;         2 data inputs ; 1                           ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 57                          ;
+;     normal            ; 58                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 12                          ;
 ;         2 data inputs ; 7                           ;
 ;         3 data inputs ; 3                           ;
-;         4 data inputs ; 20                          ;
-;         5 data inputs ; 7                           ;
+;         4 data inputs ; 19                          ;
+;         5 data inputs ; 9                           ;
 ;         6 data inputs ; 7                           ;
 ; boundary_port         ; 21                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.66                        ;
+; Average LUT depth     ; 1.65                        ;
 +-----------------------+-----------------------------+
 
 
@@ -331,7 +330,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Feb 03 10:21:21 2025
+    Info: Processing started: Thu Feb 06 18:45:50 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab4 -c lab4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
@@ -367,14 +366,14 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "s2" File: C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/lab4/lab4.sv Line: 6
-Info (21057): Implemented 116 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 117 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 15 output pins
-    Info (21061): Implemented 95 logic cells
+    Info (21061): Implemented 96 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 4922 megabytes
-    Info: Processing ended: Mon Feb 03 10:21:26 2025
+    Info: Peak virtual memory: 4885 megabytes
+    Info: Processing ended: Thu Feb 06 18:45:55 2025
     Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

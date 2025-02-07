@@ -24,7 +24,7 @@ module lab4 (
     logic [3:0] disp_digit;     // Current digit of count to display
     logic [15:0] clk_div_count; // Count used to divide clock
     logic adc_clk;              // Divided clock for ADC (1.5625 MHz)
-    logic [3:0] adc_cycle_count;// Counter for ADC cycles (12+1)
+    logic [4:0] adc_cycle_count;// Counter for ADC cycles (16)
 
     // Pushbuttons for control signals
     assign reset_n = s1;        // s1 is active low reset
@@ -47,21 +47,36 @@ module lab4 (
     // Assign the top two bits of count to select digit to display
     assign digit = clk_div_count[15:14];
 
-    // Update result_reg after 12 cycles of adc_clk
+/*     // Update result_reg after 16 cycles
     always_ff @(posedge adc_clk or negedge reset_n) begin
         if (~reset_n) begin
-            result_reg <= 12'b0000_0000_0000;
-        end else if (adc_cycle_count == 4'b1101) begin // After 12 cycles (one extra start cycle)
+            result_reg <= '0;
+            adc_cycle_count <= '0;
+        end else begin
+            if (adc_cycle_count == 16) begin // 16 cycles
             result_reg <= result;
+            adc_cycle_count <= '0;
+            end else begin
+                adc_cycle_count <= adc_cycle_count + 1'b1;
+            end
+        end
+    end */
+
+    // Update result_reg after 12 cycles of adc_clk, reset at 16
+    always_ff @(posedge adc_clk or negedge reset_n) begin
+        if (~reset_n) begin
+            result_reg <= 12'b0000_0000_0000; // Reset result_reg
+        end else if (adc_cycle_count == 4'b1011) begin // After 12 cycles (0-11)
+            result_reg <= result;             // Update result_reg
         end
     end
 
-    // Counter for ADC cycles (0-11)
+    // Counter for ADC cycles
     always_ff @(posedge adc_clk or negedge reset_n) begin
         if (~reset_n) begin
-            adc_cycle_count <= 4'b0000;
+            adc_cycle_count <= 4'b0000; // Reset counter
         end else begin
-            adc_cycle_count <= adc_cycle_count + 1'b1;
+            adc_cycle_count <= adc_cycle_count + 1'b1; // Increment counter
         end
     end
 
