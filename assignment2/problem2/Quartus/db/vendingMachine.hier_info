@@ -1,0 +1,25 @@
+|vendingMachine
+valid <= valid~reg0.DB_MAX_OUTPUT_PORT_TYPE
+nickel => Add0.IN6
+nickel => Add0.IN7
+dime => Add1.IN13
+dime => Add1.IN14
+quarter => Mult0.IN5
+clk => valid~reg0.CLK
+clk => total[0].CLK
+clk => total[1].CLK
+clk => total[2].CLK
+clk => total[3].CLK
+clk => total[4].CLK
+clk => total[5].CLK
+clk => total[6].CLK
+reset_n => valid~reg0.ACLR
+reset_n => total[0].ACLR
+reset_n => total[1].ACLR
+reset_n => total[2].ACLR
+reset_n => total[3].ACLR
+reset_n => total[4].ACLR
+reset_n => total[5].ACLR
+reset_n => total[6].ACLR
+
+

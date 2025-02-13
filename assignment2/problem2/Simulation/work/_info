@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem1/Simulation
+vvendingMachine
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1739486015
+!i10b 1
+!s100 2_W9E?5ZJdh_O5VnWj[hW0
+I?oFX;S;T7E7GBj6;RF25T0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 vendingMachine_sv_unit
+S1
+Z3 dC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem2/Simulation
+w1739485461
+8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem2/Modules/vendingMachine.sv
+FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem2/Modules/vendingMachine.sv
+L0 6
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1739486015.000000
+!s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem2/Modules/vendingMachine.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem2/Modules/vendingMachine.sv|
+!i113 1
+Z6 o-work work -sv
+Z7 tCvgOpt 0
+nvending@machine
+vvendingMachine_tb
+R0
+R1
+!i10b 1
+!s100 J8`3=mciJSQWj1nlE<mb50
+I5E0T?kjZd[ci9V^T1PTF93
+R2
+!s105 vendingMachine_tb_sv_unit
+S1
+R3
+w1739485571
+8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem2/Simulation/vendingMachine_tb.sv
+FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem2/Simulation/vendingMachine_tb.sv
+L0 5
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem2/Simulation/vendingMachine_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem2/Simulation/vendingMachine_tb.sv|
+!i113 1
+R6
+R7
+nvending@machine_tb
