@@ -17,7 +17,6 @@ module lab4 (
     logic reset_n;              // Reset
     logic enc1_cw, enc1_ccw;    // Encoder module outputs
     logic [11:0] result;        // ADC result
-    logic [11:0] result_reg;
 
     // Display lower 16 bits of freq on 7-segment display
     logic [1:0] digit;          // Select digit to display
@@ -47,45 +46,12 @@ module lab4 (
     // Assign the top two bits of count to select digit to display
     assign digit = clk_div_count[15:14];
 
-/*     // Update result_reg after 16 cycles
-    always_ff @(posedge adc_clk or negedge reset_n) begin
-        if (~reset_n) begin
-            result_reg <= '0;
-            adc_cycle_count <= '0;
-        end else begin
-            if (adc_cycle_count == 16) begin // 16 cycles
-            result_reg <= result;
-            adc_cycle_count <= '0;
-            end else begin
-                adc_cycle_count <= adc_cycle_count + 1'b1;
-            end
-        end
-    end */
-
-    // Update result_reg after 12 cycles of adc_clk, reset at 16
-    always_ff @(posedge adc_clk or negedge reset_n) begin
-        if (~reset_n) begin
-            result_reg <= 12'b0000_0000_0000; // Reset result_reg
-        end else if (adc_cycle_count == 4'b1011) begin // After 12 cycles (0-11)
-            result_reg <= result;             // Update result_reg
-        end
-    end
-
-    // Counter for ADC cycles
-    always_ff @(posedge adc_clk or negedge reset_n) begin
-        if (~reset_n) begin
-            adc_cycle_count <= 4'b0000; // Reset counter
-        end else begin
-            adc_cycle_count <= adc_cycle_count + 1'b1; // Increment counter
-        end
-    end
-
     // Select digit to display (disp_digit)
     always_comb begin
         case (digit)
-            2'b00 : disp_digit = result_reg[3:0];   // Least significant nibble
-            2'b01 : disp_digit = result_reg[7:4];   // Middle nibble
-            2'b10 : disp_digit = result_reg[11:8];  // Most significant nibble
+            2'b00 : disp_digit = result[3:0];   // Least significant nibble
+            2'b01 : disp_digit = result[7:4];   // Middle nibble
+            2'b10 : disp_digit = result[11:8];  // Most significant nibble
             2'b11 : disp_digit = {1'b0, chan};      // Display channel number (0-7)
             default: disp_digit = 4'b0000;
         endcase
