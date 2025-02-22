@@ -10,15 +10,15 @@ cModel Technology
 dC:/intelFPGA_lite/18.1
 vseqDetect
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1739486083
+Z1 !s110 1740243983
 !i10b 1
-!s100 Wz7Yh^aUIjc@jXZb1a>[M3
-Ih5BEZ4PXaL6g9o_iK1NWm0
+!s100 6EHm_=X=N<[QPM:`KMJ<J0
+IJ3917AT`Y5_:gJH^E0:P^2
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 !s105 seqDetect_sv_unit
 S1
 Z3 dC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem1/Simulation
-w1739481463
+w1740243971
 8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem1/Modules/seqDetect.sv
 FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem1/Modules/seqDetect.sv
 L0 5
@@ -26,7 +26,7 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1739486083.000000
+Z5 !s108 1740243983.000000
 !s107 C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem1/Modules/seqDetect.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem1/Modules/seqDetect.sv|
 !i113 1
@@ -37,16 +37,16 @@ vseqDetect_tb
 R0
 R1
 !i10b 1
-!s100 ?WOQ@cUKHf]o2SP?IUzMa3
-IU^CT]`RND^TJTo`EohS690
+!s100 `;>7>0ceVToSb]I7EOohR2
+I9H=TINR>2bKXE1JZI`OhN1
 R2
 !s105 seqDetect_tb_sv_unit
 S1
 R3
-w1739486070
+w1740243645
 8C:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem1/Simulation/seqDetect_tb.sv
 FC:/Users/teylo/Documents/GitHub/ELEX7660-Digital_System_Design/assignment2/problem1/Simulation/seqDetect_tb.sv
-L0 5
+L0 7
 R4
 r1
 !s85 0

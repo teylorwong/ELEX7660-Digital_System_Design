@@ -1,63 +1,95 @@
 // Assignment 2: Problem1 - Sequence Detector Testbench
 // seqDetect_tb.sv - tests module as a 3-bit sequence detector (N=3)
-// Teylor Wong 12-02-2025
+// Teylor Wong 02-12-2025
+
+`timescale 1ms/1ms
 
 module seqDetect_tb;
+    logic clk = 1;       // Clock signal
+    logic reset_n;       // Reset signal
+    logic a;
+    logic valid;
+    logic [2:0] seq = 3'b100;  // Expected sequence
+    logic [2:0] test_register = 0;  // Tracks input bits
 
-    logic valid, a;  
-    logic [2:0] seq;
-    logic clk, reset_n;
+    // Instantiate sequence detector with N=3
+    seqDetect #(3) DUT (.valid(valid), .a(a), .seq(seq), .clk(clk), .reset_n(reset_n));
 
-    seqDetect #(.N(3)) dut(.valid(valid), .a(a), .seq(seq), .clk(clk), .reset_n(reset_n));
+    // Generate clock
+    always #25ms clk = ~clk;
 
-    // clock that toggles every 5 time units
-    always begin
-        clk = 0; #5;
-        clk = 1; #5;
-    end
-
-    // Testing
     initial begin
-        // Initialize signals
+        // Apply reset
         reset_n = 0;
         a = 0;
-        seq = 3'b110; // Set a specific sequence
-        $display("Sequence to detect: %b", seq);
-        #10;
-
+        repeat(2) @(negedge clk);
         reset_n = 1;
-        #10;
 
-        // Test all 3-bit combinations
-        a = 0; #10; a = 0; #10; a = 0; #10; #10;
-        $display("Input: 000, Valid: %b", valid);
+        // Test all 3-bit sequences (000 - 111)
 
-        a = 0; #10; a = 0; #10; a = 1; #10; #10;
-        $display("Input: 001, Valid: %b", valid);
+        // 000 - Incorrect
+        a = 0; test_register = {test_register[1:0], a}; @(negedge clk);
+        a = 0; test_register = {test_register[1:0], a}; @(negedge clk);
+        a = 0; test_register = {test_register[1:0], a}; @(negedge clk);
+        check_result();
 
-        a = 0; #10; a = 1; #10; a = 0; #10; #10;
-        $display("Input: 010, Valid: %b", valid);
+        // 001 - Incorrect
+        a = 0; test_register = {test_register[1:0], a}; @(negedge clk);
+        a = 0; test_register = {test_register[1:0], a}; @(negedge clk);
+        a = 1; test_register = {test_register[1:0], a}; @(negedge clk);
+        check_result();
 
-        a = 0; #10; a = 1; #10; a = 1; #10; #10;
-        $display("Input: 011, Valid: %b", valid);
+        // 010 - Incorrect
+        a = 0; test_register = {test_register[1:0], a}; @(negedge clk);
+        a = 1; test_register = {test_register[1:0], a}; @(negedge clk);
+        a = 0; test_register = {test_register[1:0], a}; @(negedge clk);
+        check_result();
 
-        a = 1; #10; a = 0; #10; a = 0; #10; #10;
-        $display("Input: 100, Valid: %b", valid);
+        // 011 - Incorrect
+        a = 0; test_register = {test_register[1:0], a}; @(negedge clk);
+        a = 1; test_register = {test_register[1:0], a}; @(negedge clk);
+        a = 1; test_register = {test_register[1:0], a}; @(negedge clk);
+        check_result();
 
-        a = 1; #10; a = 0; #10; a = 1; #10; #10;
-        $display("Input: 101, Valid: %b", valid);
+        // 100 - Correct
+        a = 1; test_register = {test_register[1:0], a}; @(negedge clk);
+        a = 0; test_register = {test_register[1:0], a}; @(negedge clk);
+        a = 0; test_register = {test_register[1:0], a}; @(negedge clk);
+        check_result();
 
-        a = 1; #10; a = 1; #10; a = 0; #10; #10;
-        $display("Input: 110, Valid: %b", valid);
+        // 101 - Incorrect
+        a = 1; test_register = {test_register[1:0], a}; @(negedge clk);
+        a = 0; test_register = {test_register[1:0], a}; @(negedge clk);
+        a = 1; test_register = {test_register[1:0], a}; @(negedge clk);
+        check_result();
 
-        a = 1; #10; a = 1; #10; a = 1; #10; #10;
-        $display("Input: 111, Valid: %b", valid);
+        // 110 - Incorrect
+        a = 1; test_register = {test_register[1:0], a}; @(negedge clk);
+        a = 1; test_register = {test_register[1:0], a}; @(negedge clk);
+        a = 0; test_register = {test_register[1:0], a}; @(negedge clk);
+        check_result();
 
-        $stop;
+        // 111 - Incorrect
+        a = 1; test_register = {test_register[1:0], a}; @(negedge clk);
+        a = 1; test_register = {test_register[1:0], a}; @(negedge clk);
+        a = 1; test_register = {test_register[1:0], a}; @(negedge clk);
+        check_result();
+
+        $stop;  // End simulation
     end
 
-    initial begin
-        $dumpfile("seqDetect_wave.vcd");
-        $dumpvars(0, seqDetect_tb);
-    end
+    // Function to check result and print test outcome
+    task check_result;
+        if (valid) begin
+            if (test_register == seq)
+                $display("PASS: Sequence %b detected correctly", test_register);
+            else
+                $display("FAIL: False detection for %b", test_register);
+        end else begin
+            if (test_register == seq)
+                $display("FAIL: Expected detection for %b, but valid was not asserted", test_register);
+            else
+                $display("PASS: No detection as expected for %b", test_register);
+        end
+    endtask
 endmodule
