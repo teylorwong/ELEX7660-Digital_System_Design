@@ -57,7 +57,7 @@ module adcinterface(
     // Clock gating for ADC_SCK
     assign ADC_SCK = ((sck_count > 4'b0010) && (sck_count <= 4'b1110)) ? clk : 1'b0;
 
-    // Control ADC_SDI based on the sck_count value
+    / Control ADC_SDI based on the sck_count value
     always_ff @(negedge clk) begin
         ADC_SDI <= (sck_count == 4'b0010) ? 1'b1 :
                    (sck_count == 4'b0011) ? chan[0] :

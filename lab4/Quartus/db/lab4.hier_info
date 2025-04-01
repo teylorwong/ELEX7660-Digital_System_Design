@@ -4,21 +4,21 @@ s1 => reset_n.IN2
 s2 => ~NO_FANOUT~
 enc1_a => comb.DATAIN
 enc1_b => comb.DATAIN
-leds[0] << decode7:decode7_0.leds
-leds[1] << decode7:decode7_0.leds
-leds[2] << decode7:decode7_0.leds
-leds[3] << decode7:decode7_0.leds
-leds[4] << decode7:decode7_0.leds
-leds[5] << decode7:decode7_0.leds
-leds[6] << decode7:decode7_0.leds
-leds[7] << decode7:decode7_0.leds
-ct[0] << decode2:decode2_0.ct
-ct[1] << decode2:decode2_0.ct
-ct[2] << decode2:decode2_0.ct
-ct[3] << decode2:decode2_0.ct
-ADC_CONVST << adcinterface:adcinterface_0.ADC_CONVST
-ADC_SCK << adcinterface:adcinterface_0.ADC_SCK
-ADC_SDI << adcinterface:adcinterface_0.ADC_SDI
+leds[0] <= decode7:decode7_0.leds
+leds[1] <= decode7:decode7_0.leds
+leds[2] <= decode7:decode7_0.leds
+leds[3] <= decode7:decode7_0.leds
+leds[4] <= decode7:decode7_0.leds
+leds[5] <= decode7:decode7_0.leds
+leds[6] <= decode7:decode7_0.leds
+leds[7] <= decode7:decode7_0.leds
+ct[0] <= decode2:decode2_0.ct
+ct[1] <= decode2:decode2_0.ct
+ct[2] <= decode2:decode2_0.ct
+ct[3] <= decode2:decode2_0.ct
+ADC_CONVST <= adcinterface:adcinterface_0.ADC_CONVST
+ADC_SCK <= adcinterface:adcinterface_0.ADC_SCK
+ADC_SDI <= adcinterface:adcinterface_0.ADC_SDI
 ADC_SDO => ADC_SDO.IN1
 
 
