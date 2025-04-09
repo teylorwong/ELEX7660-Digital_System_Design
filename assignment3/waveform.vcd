@@ -1,0 +1,384 @@
+$date
+	Tue Apr 08 19:52:25 2025
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module fourPhaseHandshake_tb $end
+$var parameter 32 ! WIDTH $end
+$var reg 1 " clk1 $end
+$var reg 1 # clk2 $end
+$var reg 1 $ rst1 $end
+$var reg 1 % rst2 $end
+$var reg 8 & dataIn [7:0] $end
+$var reg 1 ' validIn $end
+$var reg 1 ( ready $end
+$var reg 8 ) dataOut [7:0] $end
+$var reg 1 * validOut $end
+$var reg 1 + req $end
+$var reg 1 , ack $end
+$var reg 1 - req2a $end
+$var reg 1 . req2b $end
+$var reg 1 / ack1a $end
+$var reg 1 0 ack1b $end
+
+$scope module dut $end
+$var parameter 32 1 WIDTH $end
+$var wire 1 2 clk1 $end
+$var wire 1 3 clk2 $end
+$var wire 1 4 rst1 $end
+$var wire 1 5 rst2 $end
+$var wire 1 6 dataIn [7] $end
+$var wire 1 7 dataIn [6] $end
+$var wire 1 8 dataIn [5] $end
+$var wire 1 9 dataIn [4] $end
+$var wire 1 : dataIn [3] $end
+$var wire 1 ; dataIn [2] $end
+$var wire 1 < dataIn [1] $end
+$var wire 1 = dataIn [0] $end
+$var wire 1 > validIn $end
+$var reg 1 ? ready $end
+$var reg 8 @ dataOut [7:0] $end
+$var reg 1 A validOut $end
+$var reg 1 B req $end
+$var reg 1 C ack $end
+$var reg 1 D req2a $end
+$var reg 1 E req2b $end
+$var reg 1 F ack1a $end
+$var reg 1 G ack1b $end
+$var reg 8 H dataReg [7:0] $end
+$var reg 8 I dataBuffer [7:0] $end
+$var reg 2 J state [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0"
+0#
+1$
+1%
+b0 &
+0'
+1(
+b0 )
+0*
+0+
+0,
+0-
+0.
+0/
+00
+1?
+b0 @
+0A
+0B
+0C
+0D
+0E
+0F
+0G
+b0 H
+b0 I
+b0 J
+b1000 !
+b1000 1
+02
+03
+14
+15
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+0>
+$end
+#5
+1"
+12
+#7
+1#
+13
+#10
+0"
+02
+#14
+0#
+03
+#15
+1"
+12
+#20
+0$
+0%
+0"
+04
+05
+02
+#21
+1#
+13
+#25
+1"
+12
+b1000101 &
+1'
+1=
+1;
+17
+1>
+#28
+0#
+03
+#30
+0"
+02
+#35
+1#
+1"
+13
+12
+0'
+0>
+1B
+0?
+b1000101 H
+0(
+1+
+#40
+0"
+02
+#42
+0#
+03
+#45
+1"
+12
+#49
+1#
+13
+1D
+1-
+#50
+0"
+02
+#55
+1"
+12
+#56
+0#
+03
+#60
+0"
+02
+#63
+1#
+13
+1E
+1.
+#65
+1"
+12
+#70
+0#
+0"
+03
+02
+#75
+1"
+12
+#77
+1#
+13
+b1000101 I
+b1000101 @
+1C
+1A
+b1 J
+1*
+1,
+b1000101 )
+#80
+0"
+02
+#84
+0#
+03
+#85
+1"
+12
+1F
+1/
+#90
+0"
+02
+#91
+1#
+13
+0A
+0*
+#95
+1"
+12
+1G
+10
+#98
+0#
+03
+#100
+0"
+02
+#105
+1#
+1"
+13
+12
+0B
+1?
+1(
+0+
+#110
+0"
+02
+#112
+0#
+03
+#115
+1"
+12
+#119
+1#
+13
+0D
+0-
+#120
+0"
+02
+#125
+1"
+12
+#126
+0#
+03
+#130
+0"
+02
+#133
+1#
+13
+0E
+0.
+#135
+1"
+12
+#140
+0#
+0"
+03
+02
+#145
+1"
+12
+#147
+1#
+13
+0C
+b0 J
+0,
+#150
+0"
+02
+#154
+0#
+03
+#155
+1"
+12
+0F
+0/
+#160
+0"
+02
+#161
+1#
+13
+#165
+1"
+12
+0G
+00
+#168
+0#
+03
+#170
+0"
+02
+#175
+1#
+1"
+13
+12
+#180
+0"
+02
+#182
+0#
+03
+#185
+1"
+12
+#189
+1#
+13
+#190
+0"
+02
+#195
+1"
+12
+#196
+0#
+03
+#200
+0"
+02
+#203
+1#
+13
+#205
+1"
+12
+#210
+0#
+0"
+03
+02
+#215
+1"
+12
+#217
+1#
+13
+#220
+0"
+02
+#224
+0#
+03
+#225
+1"
+12
+#230
+0"
+02
+#231
+1#
+13

@@ -1,44 +1,60 @@
-// fourPhaseHandshake_tb.sv - Testbench for fourPhaseHandshake
-// Teylor Wong 01/31/25
+// fourPhaseHandshake_tb.sv - testbench for fourPhaseHandshake
+// Generates two clock domains and drives valildIn for one clk1 cycle, then
+// shows th handshake signals and data transfer.
 
 module fourPhaseHandshake_tb;
-    localparam int DATA_WIDTH = 8;
 
-    logic clk1, clk2;
-    logic [DATA_WIDTH-1:0] dataIn;
-    logic validIn, ready;
-    logic [DATA_WIDTH-1:0] dataOut;
-    logic validOut;
+    parameter WIDTH = 8;
 
-    // DUT
-    fourPhaseHandshake #(.DATA_WIDTH(DATA_WIDTH)) dut (.clk1(clk1),.clk2(clk2),.dataIn(dataIn),
-    .validIn(validIn),.ready(ready),.dataOut(dataOut),.validOut(validOut));
+    logic clk1 = 0, clk2 = 0;
+    logic rst1 = 1, rst2 = 1;
 
-    // Clock generation
-    always #5 clk1 = ~clk1; // 100 MHz
-    always #7 clk2 = ~clk2; // 71.4 MHz
+    logic [WIDTH-1:0] dataIn;
+    logic             validIn;
+    logic             ready;
+
+    logic [WIDTH-1:0] dataOut;
+    logic             validOut;
+
+    logic req, ack;
+    logic req2a, req2b;
+    logic ack1a, ack1b;
+
+    // clocks
+    always #5  clk1 = ~clk1;
+    always #7  clk2 = ~clk2;
+
+    fourPhaseHandshake #(.WIDTH(WIDTH)) dut (
+        .clk1, .clk2, .rst1, .rst2,
+        .dataIn, .validIn, .ready,
+        .dataOut, .validOut,
+        .req, .ack, .req2a, .req2b, .ack1a, .ack1b
+    );
 
     initial begin
-        // Initialize signals
-        clk1 = 0; clk2 = 0;
-        dataIn = 0; validIn = 0;
+        $dumpfile("waveform.vcd");
+        $dumpvars(0, fourPhaseHandshake_tb);
 
-        // Send first data
+        dataIn  = 0;
+        validIn = 0;
+
+        // deassert resets
         #20;
-        dataIn = 8'hA5;
-        validIn = 1;
-        wait (ready);
-        #10 validIn = 0;
+        rst1 = 0;
+        rst2 = 0;
 
-        // Send second data
-        #50;
-        dataIn = 8'h3C;
-        validIn = 1;
-        wait (ready);
-        #10 validIn = 0;
+        // wait until clk1 is ready
+        @(posedge clk1);
+        wait(ready);
 
-        // Finish test
-        #100;
+        // 1-cycle transaction
+        dataIn   = $urandom_range(1, 255);
+        validIn  = 1;
+        @(posedge clk1);
+        validIn  = 0;
+
+        // observe behavior
+        #200;
         $stop;
     end
 

@@ -1,0 +1,5 @@
+
+State Machine - |fourPhaseHandshake|state
+Name state.VALID 
+state.IDLE 0 
+state.VALID 1 
